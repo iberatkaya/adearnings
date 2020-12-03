@@ -1,0 +1,888 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F49702862578ED5A009EC288 /* ad_earningsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702852578ED5A009EC288 /* ad_earningsApp.swift */; };
+		F49702882578ED5A009EC288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702872578ED5A009EC288 /* ContentView.swift */; };
+		F497028A2578ED5B009EC288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49702892578ED5B009EC288 /* Assets.xcassets */; };
+		F497028D2578ED5B009EC288 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F497028C2578ED5B009EC288 /* Preview Assets.xcassets */; };
+		F49702982578ED5C009EC288 /* ad_earningsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702972578ED5C009EC288 /* ad_earningsTests.swift */; };
+		F49702A32578ED5C009EC288 /* ad_earningsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702A22578ED5C009EC288 /* ad_earningsUITests.swift */; };
+		F49702A82578ED5C009EC288 /* ad-earnings WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F49702A72578ED5C009EC288 /* ad-earnings WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F49702AD2578ED5C009EC288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49702AC2578ED5C009EC288 /* Assets.xcassets */; };
+		F49702B42578ED5C009EC288 /* ad-earnings WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F49702B32578ED5C009EC288 /* ad-earnings WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F49702B92578ED5C009EC288 /* ad_earningsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702B82578ED5C009EC288 /* ad_earningsApp.swift */; };
+		F49702BB2578ED5C009EC288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702BA2578ED5C009EC288 /* ContentView.swift */; };
+		F49702BD2578ED5C009EC288 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702BC2578ED5C009EC288 /* NotificationController.swift */; };
+		F49702BF2578ED5C009EC288 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702BE2578ED5C009EC288 /* NotificationView.swift */; };
+		F49702C12578ED5C009EC288 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702C02578ED5C009EC288 /* ComplicationController.swift */; };
+		F49702C32578ED5D009EC288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49702C22578ED5D009EC288 /* Assets.xcassets */; };
+		F49702C62578ED5D009EC288 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49702C52578ED5D009EC288 /* Preview Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F49702942578ED5C009EC288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F497027A2578ED5A009EC288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49702812578ED5A009EC288;
+			remoteInfo = "ad-earnings";
+		};
+		F497029F2578ED5C009EC288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F497027A2578ED5A009EC288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49702812578ED5A009EC288;
+			remoteInfo = "ad-earnings";
+		};
+		F49702A92578ED5C009EC288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F497027A2578ED5A009EC288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49702A62578ED5C009EC288;
+			remoteInfo = "ad-earnings WatchKit App";
+		};
+		F49702B52578ED5C009EC288 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F497027A2578ED5A009EC288 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49702B22578ED5C009EC288;
+			remoteInfo = "ad-earnings WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F49702CE2578ED5D009EC288 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F49702B42578ED5C009EC288 /* ad-earnings WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702D22578ED5D009EC288 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F49702A82578ED5C009EC288 /* ad-earnings WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		F49702822578ED5A009EC288 /* ad-earnings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ad-earnings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49702852578ED5A009EC288 /* ad_earningsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ad_earningsApp.swift; sourceTree = "<group>"; };
+		F49702872578ED5A009EC288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F49702892578ED5B009EC288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F497028C2578ED5B009EC288 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F497028E2578ED5B009EC288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49702932578ED5C009EC288 /* ad-earningsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ad-earningsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49702972578ED5C009EC288 /* ad_earningsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ad_earningsTests.swift; sourceTree = "<group>"; };
+		F49702992578ED5C009EC288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F497029E2578ED5C009EC288 /* ad-earningsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ad-earningsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49702A22578ED5C009EC288 /* ad_earningsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ad_earningsUITests.swift; sourceTree = "<group>"; };
+		F49702A42578ED5C009EC288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49702A72578ED5C009EC288 /* ad-earnings WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ad-earnings WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49702AC2578ED5C009EC288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F49702AE2578ED5C009EC288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49702B32578ED5C009EC288 /* ad-earnings WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ad-earnings WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F49702B82578ED5C009EC288 /* ad_earningsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ad_earningsApp.swift; sourceTree = "<group>"; };
+		F49702BA2578ED5C009EC288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F49702BC2578ED5C009EC288 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		F49702BE2578ED5C009EC288 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		F49702C02578ED5C009EC288 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		F49702C22578ED5D009EC288 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F49702C52578ED5D009EC288 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F49702C72578ED5D009EC288 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F49702C82578ED5D009EC288 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F497027F2578ED5A009EC288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702902578ED5C009EC288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F497029B2578ED5C009EC288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702B02578ED5C009EC288 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F49702792578ED5A009EC288 = {
+			isa = PBXGroup;
+			children = (
+				F49702842578ED5A009EC288 /* ad-earnings */,
+				F49702962578ED5C009EC288 /* ad-earningsTests */,
+				F49702A12578ED5C009EC288 /* ad-earningsUITests */,
+				F49702AB2578ED5C009EC288 /* ad-earnings WatchKit App */,
+				F49702B72578ED5C009EC288 /* ad-earnings WatchKit Extension */,
+				F49702832578ED5A009EC288 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F49702832578ED5A009EC288 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F49702822578ED5A009EC288 /* ad-earnings.app */,
+				F49702932578ED5C009EC288 /* ad-earningsTests.xctest */,
+				F497029E2578ED5C009EC288 /* ad-earningsUITests.xctest */,
+				F49702A72578ED5C009EC288 /* ad-earnings WatchKit App.app */,
+				F49702B32578ED5C009EC288 /* ad-earnings WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F49702842578ED5A009EC288 /* ad-earnings */ = {
+			isa = PBXGroup;
+			children = (
+				F49702852578ED5A009EC288 /* ad_earningsApp.swift */,
+				F49702872578ED5A009EC288 /* ContentView.swift */,
+				F49702892578ED5B009EC288 /* Assets.xcassets */,
+				F497028E2578ED5B009EC288 /* Info.plist */,
+				F497028B2578ED5B009EC288 /* Preview Content */,
+			);
+			path = "ad-earnings";
+			sourceTree = "<group>";
+		};
+		F497028B2578ED5B009EC288 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F497028C2578ED5B009EC288 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F49702962578ED5C009EC288 /* ad-earningsTests */ = {
+			isa = PBXGroup;
+			children = (
+				F49702972578ED5C009EC288 /* ad_earningsTests.swift */,
+				F49702992578ED5C009EC288 /* Info.plist */,
+			);
+			path = "ad-earningsTests";
+			sourceTree = "<group>";
+		};
+		F49702A12578ED5C009EC288 /* ad-earningsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F49702A22578ED5C009EC288 /* ad_earningsUITests.swift */,
+				F49702A42578ED5C009EC288 /* Info.plist */,
+			);
+			path = "ad-earningsUITests";
+			sourceTree = "<group>";
+		};
+		F49702AB2578ED5C009EC288 /* ad-earnings WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				F49702AC2578ED5C009EC288 /* Assets.xcassets */,
+				F49702AE2578ED5C009EC288 /* Info.plist */,
+			);
+			path = "ad-earnings WatchKit App";
+			sourceTree = "<group>";
+		};
+		F49702B72578ED5C009EC288 /* ad-earnings WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F49702B82578ED5C009EC288 /* ad_earningsApp.swift */,
+				F49702BA2578ED5C009EC288 /* ContentView.swift */,
+				F49702BC2578ED5C009EC288 /* NotificationController.swift */,
+				F49702BE2578ED5C009EC288 /* NotificationView.swift */,
+				F49702C02578ED5C009EC288 /* ComplicationController.swift */,
+				F49702C22578ED5D009EC288 /* Assets.xcassets */,
+				F49702C72578ED5D009EC288 /* Info.plist */,
+				F49702C82578ED5D009EC288 /* PushNotificationPayload.apns */,
+				F49702C42578ED5D009EC288 /* Preview Content */,
+			);
+			path = "ad-earnings WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		F49702C42578ED5D009EC288 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F49702C52578ED5D009EC288 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F49702812578ED5A009EC288 /* ad-earnings */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49702D32578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings" */;
+			buildPhases = (
+				F497027E2578ED5A009EC288 /* Sources */,
+				F497027F2578ED5A009EC288 /* Frameworks */,
+				F49702802578ED5A009EC288 /* Resources */,
+				F49702D22578ED5D009EC288 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49702AA2578ED5C009EC288 /* PBXTargetDependency */,
+			);
+			name = "ad-earnings";
+			productName = "ad-earnings";
+			productReference = F49702822578ED5A009EC288 /* ad-earnings.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F49702922578ED5C009EC288 /* ad-earningsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49702D62578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earningsTests" */;
+			buildPhases = (
+				F497028F2578ED5C009EC288 /* Sources */,
+				F49702902578ED5C009EC288 /* Frameworks */,
+				F49702912578ED5C009EC288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49702952578ED5C009EC288 /* PBXTargetDependency */,
+			);
+			name = "ad-earningsTests";
+			productName = "ad-earningsTests";
+			productReference = F49702932578ED5C009EC288 /* ad-earningsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F497029D2578ED5C009EC288 /* ad-earningsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49702D92578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earningsUITests" */;
+			buildPhases = (
+				F497029A2578ED5C009EC288 /* Sources */,
+				F497029B2578ED5C009EC288 /* Frameworks */,
+				F497029C2578ED5C009EC288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49702A02578ED5C009EC288 /* PBXTargetDependency */,
+			);
+			name = "ad-earningsUITests";
+			productName = "ad-earningsUITests";
+			productReference = F497029E2578ED5C009EC288 /* ad-earningsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F49702A62578ED5C009EC288 /* ad-earnings WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49702CF2578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings WatchKit App" */;
+			buildPhases = (
+				F49702A52578ED5C009EC288 /* Resources */,
+				F49702CE2578ED5D009EC288 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F49702B62578ED5C009EC288 /* PBXTargetDependency */,
+			);
+			name = "ad-earnings WatchKit App";
+			productName = "ad-earnings WatchKit App";
+			productReference = F49702A72578ED5C009EC288 /* ad-earnings WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		F49702B22578ED5C009EC288 /* ad-earnings WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F49702CB2578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings WatchKit Extension" */;
+			buildPhases = (
+				F49702AF2578ED5C009EC288 /* Sources */,
+				F49702B02578ED5C009EC288 /* Frameworks */,
+				F49702B12578ED5C009EC288 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ad-earnings WatchKit Extension";
+			productName = "ad-earnings WatchKit Extension";
+			productReference = F49702B32578ED5C009EC288 /* ad-earnings WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F497027A2578ED5A009EC288 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					F49702812578ED5A009EC288 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					F49702922578ED5C009EC288 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = F49702812578ED5A009EC288;
+					};
+					F497029D2578ED5C009EC288 = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = F49702812578ED5A009EC288;
+					};
+					F49702A62578ED5C009EC288 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					F49702B22578ED5C009EC288 = {
+						CreatedOnToolsVersion = 12.2;
+					};
+				};
+			};
+			buildConfigurationList = F497027D2578ED5A009EC288 /* Build configuration list for PBXProject "ad-earnings" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F49702792578ED5A009EC288;
+			productRefGroup = F49702832578ED5A009EC288 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F49702812578ED5A009EC288 /* ad-earnings */,
+				F49702922578ED5C009EC288 /* ad-earningsTests */,
+				F497029D2578ED5C009EC288 /* ad-earningsUITests */,
+				F49702A62578ED5C009EC288 /* ad-earnings WatchKit App */,
+				F49702B22578ED5C009EC288 /* ad-earnings WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F49702802578ED5A009EC288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F497028D2578ED5B009EC288 /* Preview Assets.xcassets in Resources */,
+				F497028A2578ED5B009EC288 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702912578ED5C009EC288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F497029C2578ED5C009EC288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702A52578ED5C009EC288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49702AD2578ED5C009EC288 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702B12578ED5C009EC288 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49702C62578ED5D009EC288 /* Preview Assets.xcassets in Resources */,
+				F49702C32578ED5D009EC288 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F497027E2578ED5A009EC288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49702882578ED5A009EC288 /* ContentView.swift in Sources */,
+				F49702862578ED5A009EC288 /* ad_earningsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F497028F2578ED5C009EC288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49702982578ED5C009EC288 /* ad_earningsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F497029A2578ED5C009EC288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49702A32578ED5C009EC288 /* ad_earningsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F49702AF2578ED5C009EC288 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F49702BD2578ED5C009EC288 /* NotificationController.swift in Sources */,
+				F49702BB2578ED5C009EC288 /* ContentView.swift in Sources */,
+				F49702C12578ED5C009EC288 /* ComplicationController.swift in Sources */,
+				F49702B92578ED5C009EC288 /* ad_earningsApp.swift in Sources */,
+				F49702BF2578ED5C009EC288 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F49702952578ED5C009EC288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49702812578ED5A009EC288 /* ad-earnings */;
+			targetProxy = F49702942578ED5C009EC288 /* PBXContainerItemProxy */;
+		};
+		F49702A02578ED5C009EC288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49702812578ED5A009EC288 /* ad-earnings */;
+			targetProxy = F497029F2578ED5C009EC288 /* PBXContainerItemProxy */;
+		};
+		F49702AA2578ED5C009EC288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49702A62578ED5C009EC288 /* ad-earnings WatchKit App */;
+			targetProxy = F49702A92578ED5C009EC288 /* PBXContainerItemProxy */;
+		};
+		F49702B62578ED5C009EC288 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49702B22578ED5C009EC288 /* ad-earnings WatchKit Extension */;
+			targetProxy = F49702B52578ED5C009EC288 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F49702C92578ED5D009EC288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F49702CA2578ED5D009EC288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		F49702CC2578ED5D009EC288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ad-earnings WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ad-earnings WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earnings.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		F49702CD2578ED5D009EC288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ad-earnings WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ad-earnings WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earnings.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		F49702D02578ED5D009EC288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				IBSC_MODULE = ad_earnings_WatchKit_Extension;
+				INFOPLIST_FILE = "ad-earnings WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earnings.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Debug;
+		};
+		F49702D12578ED5D009EC288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				IBSC_MODULE = ad_earnings_WatchKit_Extension;
+				INFOPLIST_FILE = "ad-earnings WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earnings.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 7.1;
+			};
+			name = Release;
+		};
+		F49702D42578ED5D009EC288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ad-earnings/Preview Content\"";
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ad-earnings/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earnings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F49702D52578ED5D009EC288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"ad-earnings/Preview Content\"";
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "ad-earnings/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earnings";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F49702D72578ED5D009EC288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				INFOPLIST_FILE = "ad-earningsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earningsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ad-earnings.app/ad-earnings";
+			};
+			name = Debug;
+		};
+		F49702D82578ED5D009EC288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				INFOPLIST_FILE = "ad-earningsTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earningsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ad-earnings.app/ad-earnings";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F49702DA2578ED5D009EC288 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				INFOPLIST_FILE = "ad-earningsUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earningsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ad-earnings";
+			};
+			name = Debug;
+		};
+		F49702DB2578ED5D009EC288 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QH78WN2XWN;
+				INFOPLIST_FILE = "ad-earningsUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kaya.ad-earningsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "ad-earnings";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F497027D2578ED5A009EC288 /* Build configuration list for PBXProject "ad-earnings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49702C92578ED5D009EC288 /* Debug */,
+				F49702CA2578ED5D009EC288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49702CB2578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49702CC2578ED5D009EC288 /* Debug */,
+				F49702CD2578ED5D009EC288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49702CF2578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49702D02578ED5D009EC288 /* Debug */,
+				F49702D12578ED5D009EC288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49702D32578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49702D42578ED5D009EC288 /* Debug */,
+				F49702D52578ED5D009EC288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49702D62578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earningsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49702D72578ED5D009EC288 /* Debug */,
+				F49702D82578ED5D009EC288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F49702D92578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earningsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F49702DA2578ED5D009EC288 /* Debug */,
+				F49702DB2578ED5D009EC288 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F497027A2578ED5A009EC288 /* Project object */;
+}
