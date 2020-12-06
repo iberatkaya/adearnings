@@ -2,18 +2,13 @@ import SwiftUI
 import GoogleSignIn
 
 struct HomeView: View {
-    @State var signedIn: Bool = false
+    ///The Google Delegate Environment Object.
     @EnvironmentObject var googleDelegate: GoogleDelegate
     
-    private func checkIfGoogleUserIsAuthorized() {
+    ///On mount, attempt to make a silent sign in.
+    func onMount(){
         googleDelegate.silentSignIn()
     }
-    
-    func onMount(){
-        checkIfGoogleUserIsAuthorized()
-    }
-    
-    
     
     var body: some View {
         VStack {
@@ -29,7 +24,7 @@ struct HomeView: View {
                         print("got admob account \(admobAccount)")
                     }))
                 }) {
-                    Text("Get User")
+                    Text("Get Admob Account")
                 }
                 Button(action: {
                     print(googleDelegate.currentUser())
@@ -38,8 +33,6 @@ struct HomeView: View {
                 }
                 Button(action: {
                     googleDelegate.signOut()
-                    print("sign out")
-                    signedIn = false
                 }) {
                     Text("Sign Out")
                 }
