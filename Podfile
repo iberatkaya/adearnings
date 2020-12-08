@@ -5,6 +5,7 @@ target 'ad-earnings' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'GoogleSignIn'
+  pod 'Charts'
 
   # Pods for ad-earnings
 

@@ -1,5 +1,5 @@
 import SwiftUI
-import GoogleSignIn
+import Charts
 
 struct HomeView: View {
     ///The Google Delegate Environment Object.
@@ -19,17 +19,20 @@ struct HomeView: View {
                     }
             }
             else {
+                Text(googleDelegate.admobAccount?.name.prefix(12) ?? "").multilineTextAlignment(.center)
+                BarChart(xValues: googleDelegate.mediationData?.rows
+                            .map({ $0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2))
+                            }) ?? [],
+                         yValues: googleDelegate.mediationData?.rows.map({ $0.metricValue.value }) ?? [])
                 Button(action: {
-                    print(googleDelegate.accountsRequest(completed: { admobAccount in
-                        print("got admob account \(admobAccount)")
-                    }))
+                    googleDelegate.accountsRequest()
                 }) {
                     Text("Get Admob Account")
                 }
                 Button(action: {
-                    print(googleDelegate.currentUser())
+                    googleDelegate.mediationReport(startDate: Date.from(year: 2020, month: 11, day: 1)!, endDate: Date.from(year: 2020, month: 11, day: 30)!)
                 }) {
-                    Text("User")
+                    Text("Get Mediation")
                 }
                 Button(action: {
                     googleDelegate.signOut()
@@ -38,5 +41,11 @@ struct HomeView: View {
                 }
             }
         }.onAppear(perform: onMount)
+    }
+}
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView().environmentObject(GoogleDelegate())
     }
 }

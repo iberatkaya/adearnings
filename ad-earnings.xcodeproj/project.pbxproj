@@ -11,8 +11,18 @@
 		493E94CF495D01E0EABC9F60 /* Pods_ad_earnings_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881E5C5C68CB08504D0C549 /* Pods_ad_earnings_WatchKit_Extension.framework */; };
 		DF16CA41DBF8C47C234F8A76 /* Pods_ad_earningsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81CE8847B7A2071A201A435 /* Pods_ad_earningsTests.framework */; };
 		E674C53C0E9F827B08EB3BEB /* Pods_ad_earnings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C906E51E10143261D8AD880D /* Pods_ad_earnings.framework */; };
+		F417ED16257E3CC5001ACD05 /* AdmobMediationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED15257E3CC5001ACD05 /* AdmobMediationHeader.swift */; };
+		F417ED24257E3D7C001ACD05 /* AdmobMediationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED23257E3D7C001ACD05 /* AdmobMediationRow.swift */; };
+		F417ED30257E3DF3001ACD05 /* AdmobMediation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED2F257E3DF3001ACD05 /* AdmobMediation.swift */; };
+		F417ED3D257E3E65001ACD05 /* DimensionValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED3C257E3E65001ACD05 /* DimensionValue.swift */; };
+		F417ED45257E3EAE001ACD05 /* MetricValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED44257E3EAE001ACD05 /* MetricValue.swift */; };
+		F417ED53257E3F12001ACD05 /* AdmobMediationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED52257E3F12001ACD05 /* AdmobMediationFooter.swift */; };
+		F429FAB5257D08FE004D9E65 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429FAB4257D08FE004D9E65 /* Date.swift */; };
 		F449D831257BB00500365461 /* AccountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449D830257BB00500365461 /* AccountsResponse.swift */; };
 		F46FC23A257BAA5F003153A8 /* AdmobAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FC239257BAA5F003153A8 /* AdmobAccount.swift */; };
+		F473A79B257F580400E8FACB /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473A79A257F580400E8FACB /* BarChart.swift */; };
+		F4759461257F727600A8B550 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4759460257F727600A8B550 /* Formatter.swift */; };
+		F4790D5F257CFFC800C2385F /* AdmobMediationParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4790D5E257CFFC800C2385F /* AdmobMediationParams.swift */; };
 		F49702862578ED5A009EC288 /* ad_earningsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702852578ED5A009EC288 /* ad_earningsApp.swift */; };
 		F49702882578ED5A009EC288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702872578ED5A009EC288 /* ContentView.swift */; };
 		F497028A2578ED5B009EC288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49702892578ED5B009EC288 /* Assets.xcassets */; };
@@ -109,8 +119,18 @@
 		C13E3A79CDC922E45D72D81F /* Pods-ad-earnings WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit App/Pods-ad-earnings WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
 		C906E51E10143261D8AD880D /* Pods_ad_earnings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E81CE8847B7A2071A201A435 /* Pods_ad_earningsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earningsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F417ED15257E3CC5001ACD05 /* AdmobMediationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationHeader.swift; sourceTree = "<group>"; };
+		F417ED23257E3D7C001ACD05 /* AdmobMediationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationRow.swift; sourceTree = "<group>"; };
+		F417ED2F257E3DF3001ACD05 /* AdmobMediation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediation.swift; sourceTree = "<group>"; };
+		F417ED3C257E3E65001ACD05 /* DimensionValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionValue.swift; sourceTree = "<group>"; };
+		F417ED44257E3EAE001ACD05 /* MetricValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricValue.swift; sourceTree = "<group>"; };
+		F417ED52257E3F12001ACD05 /* AdmobMediationFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationFooter.swift; sourceTree = "<group>"; };
+		F429FAB4257D08FE004D9E65 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F449D830257BB00500365461 /* AccountsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResponse.swift; sourceTree = "<group>"; };
 		F46FC239257BAA5F003153A8 /* AdmobAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobAccount.swift; sourceTree = "<group>"; };
+		F473A79A257F580400E8FACB /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		F4759460257F727600A8B550 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		F4790D5E257CFFC800C2385F /* AdmobMediationParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationParams.swift; sourceTree = "<group>"; };
 		F49702822578ED5A009EC288 /* ad-earnings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ad-earnings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49702852578ED5A009EC288 /* ad_earningsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ad_earningsApp.swift; sourceTree = "<group>"; };
 		F49702872578ED5A009EC288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -216,19 +236,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F449D82F257BAFF100365461 /* Responses */ = {
+		F417ED21257E3D44001ACD05 /* AdmobMediationRow */ = {
 			isa = PBXGroup;
 			children = (
-				F449D830257BB00500365461 /* AccountsResponse.swift */,
+				F417ED23257E3D7C001ACD05 /* AdmobMediationRow.swift */,
+				F417ED43257E3EA2001ACD05 /* MetricValue */,
+				F417ED3B257E3E45001ACD05 /* DimensionValue */,
 			);
-			path = Responses;
+			path = AdmobMediationRow;
+			sourceTree = "<group>";
+		};
+		F417ED22257E3D52001ACD05 /* AdmobMediationHeader */ = {
+			isa = PBXGroup;
+			children = (
+				F417ED15257E3CC5001ACD05 /* AdmobMediationHeader.swift */,
+			);
+			path = AdmobMediationHeader;
+			sourceTree = "<group>";
+		};
+		F417ED3B257E3E45001ACD05 /* DimensionValue */ = {
+			isa = PBXGroup;
+			children = (
+				F417ED3C257E3E65001ACD05 /* DimensionValue.swift */,
+			);
+			path = DimensionValue;
+			sourceTree = "<group>";
+		};
+		F417ED43257E3EA2001ACD05 /* MetricValue */ = {
+			isa = PBXGroup;
+			children = (
+				F417ED44257E3EAE001ACD05 /* MetricValue.swift */,
+			);
+			path = MetricValue;
+			sourceTree = "<group>";
+		};
+		F417ED50257E3EFE001ACD05 /* AdmobMediationFooter */ = {
+			isa = PBXGroup;
+			children = (
+				F417ED52257E3F12001ACD05 /* AdmobMediationFooter.swift */,
+			);
+			path = AdmobMediationFooter;
+			sourceTree = "<group>";
+		};
+		F429FAB3257D08F5004D9E65 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F429FAB4257D08FE004D9E65 /* Date.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		F46FC238257BAA4A003153A8 /* AdmobAccount */ = {
 			isa = PBXGroup;
 			children = (
 				F46FC239257BAA5F003153A8 /* AdmobAccount.swift */,
-				F449D82F257BAFF100365461 /* Responses */,
+				F449D830257BB00500365461 /* AccountsResponse.swift */,
 			);
 			path = AdmobAccount;
 			sourceTree = "<group>";
@@ -239,6 +301,35 @@
 				F49702FB2578EFAF009EC288 /* GoogleDelegate.swift */,
 			);
 			path = GoogleDelegate;
+			sourceTree = "<group>";
+		};
+		F473A799257F57F900E8FACB /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				F473A79A257F580400E8FACB /* BarChart.swift */,
+				F475945F257F726C00A8B550 /* Formatter */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		F475945F257F726C00A8B550 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+				F4759460257F727600A8B550 /* Formatter.swift */,
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		F4790D5D257CFFA100C2385F /* AdmobMediation */ = {
+			isa = PBXGroup;
+			children = (
+				F4790D5E257CFFC800C2385F /* AdmobMediationParams.swift */,
+				F417ED2F257E3DF3001ACD05 /* AdmobMediation.swift */,
+				F417ED50257E3EFE001ACD05 /* AdmobMediationFooter */,
+				F417ED22257E3D52001ACD05 /* AdmobMediationHeader */,
+				F417ED21257E3D44001ACD05 /* AdmobMediationRow */,
+			);
+			path = AdmobMediation;
 			sourceTree = "<group>";
 		};
 		F49702792578ED5A009EC288 = {
@@ -345,6 +436,8 @@
 		F49702F92578EF75009EC288 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F429FAB3257D08F5004D9E65 /* Utils */,
+				F4790D5D257CFFA100C2385F /* AdmobMediation */,
 				F46FC240257BAA64003153A8 /* GoogleDelegate */,
 				F46FC238257BAA4A003153A8 /* AdmobAccount */,
 			);
@@ -354,6 +447,7 @@
 		F49702FA2578EF7C009EC288 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F473A799257F57F900E8FACB /* Charts */,
 				F49703432578FAA2009EC288 /* Home */,
 				F49703362578FA74009EC288 /* Google */,
 			);
@@ -765,6 +859,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4790D5F257CFFC800C2385F /* AdmobMediationParams.swift in Sources */,
+				F4759461257F727600A8B550 /* Formatter.swift in Sources */,
+				F417ED53257E3F12001ACD05 /* AdmobMediationFooter.swift in Sources */,
 				F49703452578FAAB009EC288 /* Home.swift in Sources */,
 				F49703382578FA82009EC288 /* GoogleSignIn.swift in Sources */,
 				F49703142578F20A009EC288 /* AppDelegate.swift in Sources */,
@@ -772,8 +869,15 @@
 				F49702882578ED5A009EC288 /* ContentView.swift in Sources */,
 				F46FC23A257BAA5F003153A8 /* AdmobAccount.swift in Sources */,
 				F449D831257BB00500365461 /* AccountsResponse.swift in Sources */,
+				F417ED16257E3CC5001ACD05 /* AdmobMediationHeader.swift in Sources */,
+				F473A79B257F580400E8FACB /* BarChart.swift in Sources */,
+				F417ED30257E3DF3001ACD05 /* AdmobMediation.swift in Sources */,
+				F429FAB5257D08FE004D9E65 /* Date.swift in Sources */,
 				F49702862578ED5A009EC288 /* ad_earningsApp.swift in Sources */,
 				F49703212578F8A3009EC288 /* const.swift in Sources */,
+				F417ED45257E3EAE001ACD05 /* MetricValue.swift in Sources */,
+				F417ED24257E3D7C001ACD05 /* AdmobMediationRow.swift in Sources */,
+				F417ED3D257E3E65001ACD05 /* DimensionValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
