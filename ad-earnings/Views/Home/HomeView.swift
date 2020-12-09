@@ -1,7 +1,6 @@
 import SwiftUI
 import Charts
 import ExytePopupView
-import SwiftUICharts
 
 struct HomeView: View {
     ///The Google Delegate Environment Object.
