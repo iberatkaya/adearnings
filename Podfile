@@ -5,7 +5,7 @@ target 'ad-earnings' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'GoogleSignIn'
-  pod 'Charts'
+  pod 'ExytePopupView'
 
   # Pods for ad-earnings
 
@@ -31,6 +31,7 @@ end
 target 'ad-earnings WatchKit Extension' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+
 
   # Pods for ad-earnings WatchKit Extension
 

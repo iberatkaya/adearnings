@@ -13,9 +13,9 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
     
     ///Check if the Google User is signed in.
     @Published var signedIn: Bool = false
-    
-    ///This Bool is used in order to make less requests to Google API.
-    private var requestAdmobAccount: Bool = false
+
+    ///Boolean to check if the user made their first fetch. Used to display an error message in the UI.
+    @Published var madeFirstFetch: Bool = false
     
     ///The AdMob Account
     @Published var admobAccount: AdmobAccount? {
@@ -26,6 +26,10 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         }
     }
     
+    ///The current week's Mediation Data in order to display in the UI.
+    @Published var currentWeekMediationData: AdmobMediation?
+    
+    ///The Mediation Data requested by the user.
     @Published var mediationData: AdmobMediation?
     
     ///Get the current Google User.
@@ -38,6 +42,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
      * Required by the GIDSignInDelegate Protocol.
      */
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("user signed in")
         if let error = error {
             if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
             } else {
@@ -47,8 +52,14 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
             return
         }
         signedIn = true
-        if(requestAdmobAccount){
-            accountsRequest()
+
+        if(admobAccount != nil){
+            mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), completed: {report in self.currentWeekMediationData = report})
+        }
+        else {
+            accountsRequest(completed: {success in
+                self.mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), completed: {report in self.currentWeekMediationData = report})
+            })
         }
     }
     
@@ -65,7 +76,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         mediationData = nil
         UserDefaults.standard.removeObject(forKey:  "admobAccount")
         signedIn = false
-        requestAdmobAccount = true
+        madeFirstFetch = false
     }
     
     ///Attempt a silent sign in.
@@ -74,15 +85,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
             if(GIDSignIn.sharedInstance().hasPreviousSignIn()){
                 //User was previously authenticated to Google. Attempt to sign in.
                 GIDSignIn.sharedInstance()?.restorePreviousSignIn()
-                signedIn = true
             }
-            else {
-                signedIn = false
-                requestAdmobAccount = true
-            }
-        } else {
-            signedIn = false
-            requestAdmobAccount = true
         }
     }
     
@@ -92,7 +95,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
      * all credentials have access to at most one AdMob account. Therefore only the first account from the
      * array is returned.
      */
-    func accountsRequest() {
+    func accountsRequest(completed: @escaping (Bool) -> Void) {
         let url = URL(string: "https://admob.googleapis.com/v1/accounts")!
         
         var request = URLRequest(url: url)
@@ -103,29 +106,31 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         let session = URLSession.shared
         session.dataTask(with: request)  { (data, response, error)  in
             guard let data = data else {
+                completed(false)
                 return
             }
             do {
                 let admobAccounts = try JSONDecoder().decode(AccountsResponse.self, from: data)
                 DispatchQueue.main.async {
                     self.admobAccount = admobAccounts.account.first
+                    completed(true)
                 }
             } catch {
                 print("JSONDecoder error:", error)
+                completed(false)
             }
         }.resume()
     }
     
-    func mediationReport(startDate: Date, endDate: Date, dimension: Dimension = Dimension.DATE, sort: Sort = Sort.DESCENDING, metric: Metric = Metric.ESTIMATED_EARNINGS){
-        guard let admobAccount = admobAccount else {
+    func mediationReport(startDate: Date, endDate: Date, dimension: Dimension = Dimension.DATE, sort: Sort = Sort.DESCENDING, metric: Metric = Metric.ESTIMATED_EARNINGS, completed: @escaping (AdmobMediation?) -> Void = { _ in }){
+        guard let admobAccount = admobAccount,
+              let GIDInstance = GIDSignIn.sharedInstance(),
+              let currentUser = GIDInstance.currentUser
+        else {
+            completed(nil)
             return
         }
-        guard let GIDInstance = GIDSignIn.sharedInstance() else {
-            return
-        }
-        guard let currentUser = GIDInstance.currentUser else {
-            return
-        }
+        
         let url = URL(string: "https://admob.googleapis.com/v1/\(admobAccount.name)/mediationReport:generate")!
 
         var request = URLRequest(url: url)
@@ -140,12 +145,17 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         
         let session = URLSession.shared
         session.dataTask(with: request)  { (data, response, error)  in
+            DispatchQueue.main.async {
+                self.madeFirstFetch = true
+            }
             guard let data = data else {
+                completed(nil)
                 return
             }
             do {
-                let parsedData = try JSONSerialization.jsonObject(with: data) as? [[String:Any]]
+                let parsedData = try JSONSerialization.jsonObject(with: data) as? [[String: Any]]
                 guard let dictData = parsedData else {
+                    completed(nil)
                     return
                 }
                 
@@ -153,17 +163,48 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
                 DispatchQueue.main.async {
                     if(dimension == Dimension.DATE){
                         admobMediation?.rows.sort(by: {(a, b) in
-                            print((Double(a.dimensionValue.value.suffix(2)) ?? -1) < (Double(b.dimensionValue.value.suffix(2)) ?? -1))
                             return (Double(a.dimensionValue.value.suffix(2)) ?? -1) < (Double(b.dimensionValue.value.suffix(2)) ?? -1)
                         })
                     }
+                    completed(admobMediation)
                     self.mediationData = admobMediation
                 }
-                
             } catch {
                 print("JSONDecoder error:", error)
-                
+                completed(nil)
             }
         }.resume()
+    }
+    
+    ///Get today's earnings.
+    func getTodayEarnings() -> Double? {
+        return currentWeekMediationData?.rows.last?.metricValue.value
+    }
+    
+    ///Get yesterday's earnings.
+    func getYesterdayEarnings() -> Double? {
+        if(currentWeekMediationData == nil){
+            return 0
+        }
+        if(currentWeekMediationData!.rows.count < 2){
+            return 0
+        }
+        return currentWeekMediationData!.rows[currentWeekMediationData!.rows.count - 2].metricValue.value
+    }
+    
+    ///Get this week's total earnings.
+    func getCurrentWeekEarningsTotal() -> Double? {
+        return currentWeekMediationData?.rows.map({row in row.metricValue.value}).reduce(0, {current, next in
+            current + next
+        })
+    }
+    
+    func mapMediationDataToChart() -> [(String, Double)]? {
+        print(mediationData?.rows
+                .map({ ($0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2)), $0.metricValue.value)
+                }))
+        return mediationData?.rows
+            .map({ ($0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2)), $0.metricValue.value)
+            })
     }
 }

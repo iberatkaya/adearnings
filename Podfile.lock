@@ -7,6 +7,7 @@ PODS:
   - Charts (3.6.0):
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
+  - ExytePopupView (0.0.10)
   - GoogleSignIn (5.0.2):
     - AppAuth (~> 1.2)
     - GTMAppAuth (~> 1.0)
@@ -19,26 +20,33 @@ PODS:
   - GTMSessionFetcher/Core (1.5.0)
   - GTMSessionFetcher/Full (1.5.0):
     - GTMSessionFetcher/Core (= 1.5.0)
+  - YOChartImageKit (1.2.1)
 
 DEPENDENCIES:
   - Charts
+  - ExytePopupView
   - GoogleSignIn
+  - YOChartImageKit (~> 1.2.1)
 
 SPEC REPOS:
   trunk:
     - AppAuth
     - Charts
+    - ExytePopupView
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - YOChartImageKit
 
 SPEC CHECKSUMS:
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  ExytePopupView: 14a98f924a7201bc5492e2a961da11045b17eca8
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: 197a8dabfea5d665224aa00d17f164fc2248dab9
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
+  YOChartImageKit: bd73e66857c848325bef87edc40595d72a6b5fbe
 
-PODFILE CHECKSUM: 314a31760ef39f1a2a6bc98bf2241baab3ea17dc
+PODFILE CHECKSUM: 525192aecf0ce6215cc253c52a4580403f790f66
 
 COCOAPODS: 1.10.0

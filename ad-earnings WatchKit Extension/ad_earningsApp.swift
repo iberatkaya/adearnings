@@ -9,10 +9,12 @@ import SwiftUI
 
 @main
 struct ad_earningsApp: App {
+    @ObservedObject var connectivityController = ConnectivityController()
+    
     @SceneBuilder var body: some Scene {
         WindowGroup {
             NavigationView {
-                ContentView()
+                ContentView().environmentObject(connectivityController)
             }
         }
 

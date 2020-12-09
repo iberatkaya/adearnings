@@ -1,6 +1,6 @@
 import Foundation
 
-struct AdmobMediationRow {
+struct AdmobMediationRow: Encodable {
     init(dimensionValue: DimensionValue, metricValue: MetricValue) {
         self.dimensionValue = dimensionValue
         self.metricValue = metricValue
@@ -8,6 +8,17 @@ struct AdmobMediationRow {
     
     var dimensionValue: DimensionValue
     var metricValue: MetricValue
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case dimensionValue, metricValue
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(dimensionValue, forKey: .dimensionValue)
+        try container.encode(metricValue, forKey: .metricValue)
+    }
     
     static func fromDict(json: [String: Any]) -> AdmobMediationRow? {
         guard let dimensionValues = json["dimensionValues"] as? [String: Any],
@@ -39,7 +50,7 @@ struct AdmobMediationRow {
                 ),
                 metricValue: MetricValue(
                     metric: metricKey,
-                    value: metricValue / 1_000_000
+                    value: (metricValue / 1_000_000).rounded(toPlaces: 2)
                 )
             )
         }
@@ -50,7 +61,7 @@ struct AdmobMediationRow {
             ),
             metricValue: MetricValue(
                 metric: metricKey,
-                value: metricValue / 1_000_000
+                value: (metricValue / 1_000_000).rounded(toPlaces: 2)
             )
         )
     }

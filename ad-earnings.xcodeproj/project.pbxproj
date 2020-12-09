@@ -7,22 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		31F06CCF58EE79426AEA0A00 /* Pods_ad_earnings_ad_earningsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47FCCE068ECCC4E77AC843F7 /* Pods_ad_earnings_ad_earningsUITests.framework */; };
-		493E94CF495D01E0EABC9F60 /* Pods_ad_earnings_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1881E5C5C68CB08504D0C549 /* Pods_ad_earnings_WatchKit_Extension.framework */; };
-		DF16CA41DBF8C47C234F8A76 /* Pods_ad_earningsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81CE8847B7A2071A201A435 /* Pods_ad_earningsTests.framework */; };
-		E674C53C0E9F827B08EB3BEB /* Pods_ad_earnings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C906E51E10143261D8AD880D /* Pods_ad_earnings.framework */; };
+		145BE645B87B98602DC8E4F8 /* Pods_ad_earnings_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 096F4F137E176CBAD45AF5E7 /* Pods_ad_earnings_WatchKit_App.framework */; };
+		39C175D0A63567A9D5DDE8AC /* Pods_ad_earningsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E947125081F776E1EE3C49B /* Pods_ad_earningsTests.framework */; };
+		A9A2775C346A5A9DCAC51C1F /* Pods_ad_earnings_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E5DD053AAC1A59DA3B4B66 /* Pods_ad_earnings_WatchKit_Extension.framework */; };
+		CEBE6989A915671E51AB1347 /* Pods_ad_earnings_ad_earningsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ADED5AC95AA5660A709DE41 /* Pods_ad_earnings_ad_earningsUITests.framework */; };
+		D68E59F8B947FE2F759564AB /* Pods_ad_earnings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E40FF0CDC06C4F5CDCCC637 /* Pods_ad_earnings.framework */; };
 		F417ED16257E3CC5001ACD05 /* AdmobMediationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED15257E3CC5001ACD05 /* AdmobMediationHeader.swift */; };
 		F417ED24257E3D7C001ACD05 /* AdmobMediationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED23257E3D7C001ACD05 /* AdmobMediationRow.swift */; };
 		F417ED30257E3DF3001ACD05 /* AdmobMediation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED2F257E3DF3001ACD05 /* AdmobMediation.swift */; };
 		F417ED3D257E3E65001ACD05 /* DimensionValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED3C257E3E65001ACD05 /* DimensionValue.swift */; };
 		F417ED45257E3EAE001ACD05 /* MetricValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED44257E3EAE001ACD05 /* MetricValue.swift */; };
 		F417ED53257E3F12001ACD05 /* AdmobMediationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED52257E3F12001ACD05 /* AdmobMediationFooter.swift */; };
+		F41CC436257FC9B800CAC61B /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41CC435257FC9B800CAC61B /* Marker.swift */; };
+		F41CC43D257FCAB700CAC61B /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41CC43C257FCAB700CAC61B /* Double.swift */; };
 		F429FAB5257D08FE004D9E65 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429FAB4257D08FE004D9E65 /* Date.swift */; };
 		F449D831257BB00500365461 /* AccountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449D830257BB00500365461 /* AccountsResponse.swift */; };
+		F452CD682580C1690063886F /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F452CD672580C1690063886F /* ButtonStyle.swift */; };
+		F452CDB52580FC1B0063886F /* AdmobAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FC239257BAA5F003153A8 /* AdmobAccount.swift */; };
+		F452CDBB2580FC1D0063886F /* AccountsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F449D830257BB00500365461 /* AccountsResponse.swift */; };
+		F452CDD32580FF240063886F /* ConnectivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F452CDD22580FF240063886F /* ConnectivityController.swift */; };
 		F46FC23A257BAA5F003153A8 /* AdmobAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FC239257BAA5F003153A8 /* AdmobAccount.swift */; };
 		F473A79B257F580400E8FACB /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F473A79A257F580400E8FACB /* BarChart.swift */; };
 		F4759461257F727600A8B550 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4759460257F727600A8B550 /* Formatter.swift */; };
 		F4790D5F257CFFC800C2385F /* AdmobMediationParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4790D5E257CFFC800C2385F /* AdmobMediationParams.swift */; };
+		F48665AA258104EC0018DF09 /* ConnectivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48665A9258104EC0018DF09 /* ConnectivityController.swift */; };
+		F48665C7258127610018DF09 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F48665C6258127610018DF09 /* HomeView.swift */; };
+		F48665D225812EF60018DF09 /* AdmobMediation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED2F257E3DF3001ACD05 /* AdmobMediation.swift */; };
+		F48665D8258130750018DF09 /* AdmobMediationFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED52257E3F12001ACD05 /* AdmobMediationFooter.swift */; };
+		F48665DE258130770018DF09 /* AdmobMediationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED15257E3CC5001ACD05 /* AdmobMediationHeader.swift */; };
+		F48665E42581307A0018DF09 /* AdmobMediationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED23257E3D7C001ACD05 /* AdmobMediationRow.swift */; };
+		F48665EA2581307C0018DF09 /* MetricValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED44257E3EAE001ACD05 /* MetricValue.swift */; };
+		F48665F02581307E0018DF09 /* DimensionValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F417ED3C257E3E65001ACD05 /* DimensionValue.swift */; };
+		F48665F6258130980018DF09 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F429FAB4257D08FE004D9E65 /* Date.swift */; };
+		F48665FC2581309A0018DF09 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41CC43C257FCAB700CAC61B /* Double.swift */; };
 		F49702862578ED5A009EC288 /* ad_earningsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702852578ED5A009EC288 /* ad_earningsApp.swift */; };
 		F49702882578ED5A009EC288 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49702872578ED5A009EC288 /* ContentView.swift */; };
 		F497028A2578ED5B009EC288 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F49702892578ED5B009EC288 /* Assets.xcassets */; };
@@ -43,8 +60,7 @@
 		F49703142578F20A009EC288 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49703132578F20A009EC288 /* AppDelegate.swift */; };
 		F49703212578F8A3009EC288 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49703202578F8A3009EC288 /* const.swift */; };
 		F49703382578FA82009EC288 /* GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49703372578FA82009EC288 /* GoogleSignIn.swift */; };
-		F49703452578FAAB009EC288 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49703442578FAAB009EC288 /* Home.swift */; };
-		FA6F1B07E03F3FDCE515145C /* Pods_ad_earnings_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E7E207E9183C998487A416B /* Pods_ad_earnings_WatchKit_App.framework */; };
+		F49703452578FAAB009EC288 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49703442578FAAB009EC288 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,33 +120,38 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1881E5C5C68CB08504D0C549 /* Pods_ad_earnings_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		333D619A89405A1805410F02 /* Pods-ad-earnings WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		3E7E207E9183C998487A416B /* Pods_ad_earnings_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		47FCCE068ECCC4E77AC843F7 /* Pods_ad_earnings_ad_earningsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings_ad_earningsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C9642E81270C9E1F4EE1024 /* Pods-ad-earnings-ad-earningsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings-ad-earningsUITests.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests.release.xcconfig"; sourceTree = "<group>"; };
-		6EE556EC04C0222003AAB251 /* Pods-ad-earnings WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		87529419EA1ACF3FD017CD3C /* Pods-ad-earnings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings/Pods-ad-earnings.debug.xcconfig"; sourceTree = "<group>"; };
-		8A78359A5E7042C27CC65682 /* Pods-ad-earnings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings/Pods-ad-earnings.release.xcconfig"; sourceTree = "<group>"; };
-		8F44C5478A7EBAE4A3C7C5F4 /* Pods-ad-earningsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earningsTests.release.xcconfig"; path = "Target Support Files/Pods-ad-earningsTests/Pods-ad-earningsTests.release.xcconfig"; sourceTree = "<group>"; };
-		92799139BB4EC23B1C25FFCB /* Pods-ad-earnings-ad-earningsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings-ad-earningsUITests.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		ACA3B2F18C55C0B05273CF92 /* Pods-ad-earnings WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit App/Pods-ad-earnings WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
-		AD608C478033EE1BA244E5F1 /* Pods-ad-earningsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earningsTests.debug.xcconfig"; path = "Target Support Files/Pods-ad-earningsTests/Pods-ad-earningsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C13E3A79CDC922E45D72D81F /* Pods-ad-earnings WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit App/Pods-ad-earnings WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		C906E51E10143261D8AD880D /* Pods_ad_earnings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E81CE8847B7A2071A201A435 /* Pods_ad_earningsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earningsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		096F4F137E176CBAD45AF5E7 /* Pods_ad_earnings_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8D187285E0FC18E0D749B0 /* Pods-ad-earnings WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit Extension.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		1ADED5AC95AA5660A709DE41 /* Pods_ad_earnings_ad_earningsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings_ad_earningsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E3A9431F10B8346B74AE5B9 /* Pods-ad-earnings WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit App.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit App/Pods-ad-earnings WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		3651B84494E4256554779604 /* Pods-ad-earnings-ad-earningsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings-ad-earningsUITests.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5B35E04454FA796F79F9BABA /* Pods-ad-earningsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earningsTests.release.xcconfig"; path = "Target Support Files/Pods-ad-earningsTests/Pods-ad-earningsTests.release.xcconfig"; sourceTree = "<group>"; };
+		7E40FF0CDC06C4F5CDCCC637 /* Pods_ad_earnings.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F5D83A3E45AF38F6A6E4F6C /* Pods-ad-earnings WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit App.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit App/Pods-ad-earnings WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		8E947125081F776E1EE3C49B /* Pods_ad_earningsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earningsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E9A217AEA6D88F0DB3ED631 /* Pods-ad-earnings.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings/Pods-ad-earnings.debug.xcconfig"; sourceTree = "<group>"; };
+		9373477C6C6055F69E64A41E /* Pods-ad-earningsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earningsTests.debug.xcconfig"; path = "Target Support Files/Pods-ad-earningsTests/Pods-ad-earningsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		95E5DD053AAC1A59DA3B4B66 /* Pods_ad_earnings_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ad_earnings_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9D5F05213DE998EB020DC2C /* Pods-ad-earnings-ad-earningsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings-ad-earningsUITests.debug.xcconfig"; path = "Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E26F32FEB1AADD57A840C61F /* Pods-ad-earnings WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings WatchKit Extension.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		F417ED15257E3CC5001ACD05 /* AdmobMediationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationHeader.swift; sourceTree = "<group>"; };
 		F417ED23257E3D7C001ACD05 /* AdmobMediationRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationRow.swift; sourceTree = "<group>"; };
 		F417ED2F257E3DF3001ACD05 /* AdmobMediation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediation.swift; sourceTree = "<group>"; };
 		F417ED3C257E3E65001ACD05 /* DimensionValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionValue.swift; sourceTree = "<group>"; };
 		F417ED44257E3EAE001ACD05 /* MetricValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricValue.swift; sourceTree = "<group>"; };
 		F417ED52257E3F12001ACD05 /* AdmobMediationFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationFooter.swift; sourceTree = "<group>"; };
+		F41CC435257FC9B800CAC61B /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		F41CC43C257FCAB700CAC61B /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		F429FAB4257D08FE004D9E65 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F449D830257BB00500365461 /* AccountsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsResponse.swift; sourceTree = "<group>"; };
+		F452CD672580C1690063886F /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		F452CDD22580FF240063886F /* ConnectivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityController.swift; sourceTree = "<group>"; };
 		F46FC239257BAA5F003153A8 /* AdmobAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobAccount.swift; sourceTree = "<group>"; };
 		F473A79A257F580400E8FACB /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		F4759460257F727600A8B550 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		F4790D5E257CFFC800C2385F /* AdmobMediationParams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmobMediationParams.swift; sourceTree = "<group>"; };
+		F48665A9258104EC0018DF09 /* ConnectivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityController.swift; sourceTree = "<group>"; };
+		F48665C6258127610018DF09 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F49702822578ED5A009EC288 /* ad-earnings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ad-earnings.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49702852578ED5A009EC288 /* ad_earningsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ad_earningsApp.swift; sourceTree = "<group>"; };
 		F49702872578ED5A009EC288 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,7 +181,8 @@
 		F49703132578F20A009EC288 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F49703202578F8A3009EC288 /* const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
 		F49703372578FA82009EC288 /* GoogleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignIn.swift; sourceTree = "<group>"; };
-		F49703442578FAAB009EC288 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F49703442578FAAB009EC288 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FB858DBD103F292A5560DC4E /* Pods-ad-earnings.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ad-earnings.release.xcconfig"; path = "Target Support Files/Pods-ad-earnings/Pods-ad-earnings.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,7 +190,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA6F1B07E03F3FDCE515145C /* Pods_ad_earnings_WatchKit_App.framework in Frameworks */,
+				145BE645B87B98602DC8E4F8 /* Pods_ad_earnings_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,7 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E674C53C0E9F827B08EB3BEB /* Pods_ad_earnings.framework in Frameworks */,
+				D68E59F8B947FE2F759564AB /* Pods_ad_earnings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +206,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF16CA41DBF8C47C234F8A76 /* Pods_ad_earningsTests.framework in Frameworks */,
+				39C175D0A63567A9D5DDE8AC /* Pods_ad_earningsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31F06CCF58EE79426AEA0A00 /* Pods_ad_earnings_ad_earningsUITests.framework in Frameworks */,
+				CEBE6989A915671E51AB1347 /* Pods_ad_earnings_ad_earningsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				493E94CF495D01E0EABC9F60 /* Pods_ad_earnings_WatchKit_Extension.framework in Frameworks */,
+				A9A2775C346A5A9DCAC51C1F /* Pods_ad_earnings_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,28 +232,28 @@
 		329A28C09E9896EC4B320745 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				87529419EA1ACF3FD017CD3C /* Pods-ad-earnings.debug.xcconfig */,
-				8A78359A5E7042C27CC65682 /* Pods-ad-earnings.release.xcconfig */,
-				C13E3A79CDC922E45D72D81F /* Pods-ad-earnings WatchKit App.debug.xcconfig */,
-				ACA3B2F18C55C0B05273CF92 /* Pods-ad-earnings WatchKit App.release.xcconfig */,
-				6EE556EC04C0222003AAB251 /* Pods-ad-earnings WatchKit Extension.debug.xcconfig */,
-				333D619A89405A1805410F02 /* Pods-ad-earnings WatchKit Extension.release.xcconfig */,
-				92799139BB4EC23B1C25FFCB /* Pods-ad-earnings-ad-earningsUITests.debug.xcconfig */,
-				5C9642E81270C9E1F4EE1024 /* Pods-ad-earnings-ad-earningsUITests.release.xcconfig */,
-				AD608C478033EE1BA244E5F1 /* Pods-ad-earningsTests.debug.xcconfig */,
-				8F44C5478A7EBAE4A3C7C5F4 /* Pods-ad-earningsTests.release.xcconfig */,
+				8E9A217AEA6D88F0DB3ED631 /* Pods-ad-earnings.debug.xcconfig */,
+				FB858DBD103F292A5560DC4E /* Pods-ad-earnings.release.xcconfig */,
+				1E3A9431F10B8346B74AE5B9 /* Pods-ad-earnings WatchKit App.debug.xcconfig */,
+				7F5D83A3E45AF38F6A6E4F6C /* Pods-ad-earnings WatchKit App.release.xcconfig */,
+				1A8D187285E0FC18E0D749B0 /* Pods-ad-earnings WatchKit Extension.debug.xcconfig */,
+				E26F32FEB1AADD57A840C61F /* Pods-ad-earnings WatchKit Extension.release.xcconfig */,
+				A9D5F05213DE998EB020DC2C /* Pods-ad-earnings-ad-earningsUITests.debug.xcconfig */,
+				3651B84494E4256554779604 /* Pods-ad-earnings-ad-earningsUITests.release.xcconfig */,
+				9373477C6C6055F69E64A41E /* Pods-ad-earningsTests.debug.xcconfig */,
+				5B35E04454FA796F79F9BABA /* Pods-ad-earningsTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		AE786C7CCA2E09C0A67BD769 /* Frameworks */ = {
+		72D24062B312865777C8FA9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C906E51E10143261D8AD880D /* Pods_ad_earnings.framework */,
-				3E7E207E9183C998487A416B /* Pods_ad_earnings_WatchKit_App.framework */,
-				1881E5C5C68CB08504D0C549 /* Pods_ad_earnings_WatchKit_Extension.framework */,
-				47FCCE068ECCC4E77AC843F7 /* Pods_ad_earnings_ad_earningsUITests.framework */,
-				E81CE8847B7A2071A201A435 /* Pods_ad_earningsTests.framework */,
+				7E40FF0CDC06C4F5CDCCC637 /* Pods_ad_earnings.framework */,
+				096F4F137E176CBAD45AF5E7 /* Pods_ad_earnings_WatchKit_App.framework */,
+				95E5DD053AAC1A59DA3B4B66 /* Pods_ad_earnings_WatchKit_Extension.framework */,
+				1ADED5AC95AA5660A709DE41 /* Pods_ad_earnings_ad_earningsUITests.framework */,
+				8E947125081F776E1EE3C49B /* Pods_ad_earningsTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,12 +300,69 @@
 			path = AdmobMediationFooter;
 			sourceTree = "<group>";
 		};
+		F41CC434257FC9AD00CAC61B /* Marker */ = {
+			isa = PBXGroup;
+			children = (
+				F41CC435257FC9B800CAC61B /* Marker.swift */,
+			);
+			path = Marker;
+			sourceTree = "<group>";
+		};
 		F429FAB3257D08F5004D9E65 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				F429FAB4257D08FE004D9E65 /* Date.swift */,
+				F41CC43C257FCAB700CAC61B /* Double.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F452CD652580C14B0063886F /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				F452CD662580C1500063886F /* Button */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		F452CD662580C1500063886F /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F452CD672580C1690063886F /* ButtonStyle.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		F452CD732580F2330063886F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F48665A8258104D80018DF09 /* ConnectivityController */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F452CD742580F2380063886F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F48665C5258127540018DF09 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F452CDD12580FF140063886F /* Watch */ = {
+			isa = PBXGroup;
+			children = (
+				F452CDDE2580FFD20063886F /* ConnectivityController */,
+			);
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		F452CDDE2580FFD20063886F /* ConnectivityController */ = {
+			isa = PBXGroup;
+			children = (
+				F452CDD22580FF240063886F /* ConnectivityController.swift */,
+			);
+			path = ConnectivityController;
 			sourceTree = "<group>";
 		};
 		F46FC238257BAA4A003153A8 /* AdmobAccount */ = {
@@ -307,6 +386,7 @@
 			isa = PBXGroup;
 			children = (
 				F473A79A257F580400E8FACB /* BarChart.swift */,
+				F41CC434257FC9AD00CAC61B /* Marker */,
 				F475945F257F726C00A8B550 /* Formatter */,
 			);
 			path = Charts;
@@ -332,6 +412,22 @@
 			path = AdmobMediation;
 			sourceTree = "<group>";
 		};
+		F48665A8258104D80018DF09 /* ConnectivityController */ = {
+			isa = PBXGroup;
+			children = (
+				F48665A9258104EC0018DF09 /* ConnectivityController.swift */,
+			);
+			path = ConnectivityController;
+			sourceTree = "<group>";
+		};
+		F48665C5258127540018DF09 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F48665C6258127610018DF09 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F49702792578ED5A009EC288 = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +438,7 @@
 				F49702B72578ED5C009EC288 /* ad-earnings WatchKit Extension */,
 				F49702832578ED5A009EC288 /* Products */,
 				329A28C09E9896EC4B320745 /* Pods */,
-				AE786C7CCA2E09C0A67BD769 /* Frameworks */,
+				72D24062B312865777C8FA9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -415,8 +511,10 @@
 				F49702B82578ED5C009EC288 /* ad_earningsApp.swift */,
 				F49702BA2578ED5C009EC288 /* ContentView.swift */,
 				F49702BC2578ED5C009EC288 /* NotificationController.swift */,
+				F452CD732580F2330063886F /* Models */,
 				F49702BE2578ED5C009EC288 /* NotificationView.swift */,
 				F49702C02578ED5C009EC288 /* ComplicationController.swift */,
+				F452CD742580F2380063886F /* Views */,
 				F49702C22578ED5D009EC288 /* Assets.xcassets */,
 				F49702C72578ED5D009EC288 /* Info.plist */,
 				F49702C82578ED5D009EC288 /* PushNotificationPayload.apns */,
@@ -436,6 +534,7 @@
 		F49702F92578EF75009EC288 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F452CDD12580FF140063886F /* Watch */,
 				F429FAB3257D08F5004D9E65 /* Utils */,
 				F4790D5D257CFFA100C2385F /* AdmobMediation */,
 				F46FC240257BAA64003153A8 /* GoogleDelegate */,
@@ -447,6 +546,7 @@
 		F49702FA2578EF7C009EC288 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F452CD652580C14B0063886F /* Styles */,
 				F473A799257F57F900E8FACB /* Charts */,
 				F49703432578FAA2009EC288 /* Home */,
 				F49703362578FA74009EC288 /* Google */,
@@ -473,7 +573,7 @@
 		F49703432578FAA2009EC288 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F49703442578FAAB009EC288 /* Home.swift */,
+				F49703442578FAAB009EC288 /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -485,13 +585,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49702D32578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings" */;
 			buildPhases = (
-				50F329174F1EF020187F8167 /* [CP] Check Pods Manifest.lock */,
+				583CD0FB603A72B5FDB025AC /* [CP] Check Pods Manifest.lock */,
 				F497027E2578ED5A009EC288 /* Sources */,
 				F497027F2578ED5A009EC288 /* Frameworks */,
 				F49702802578ED5A009EC288 /* Resources */,
 				F49702D22578ED5D009EC288 /* Embed Watch Content */,
-				29D9E8FCE73DEC001302D4A7 /* [CP] Embed Pods Frameworks */,
-				5DA982161DADC17666D01BEA /* [CP] Copy Pods Resources */,
+				5123C6D729E2DE9E5DF53EC0 /* [CP] Embed Pods Frameworks */,
+				8AC4DBCB138134346A452D47 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,6 +599,8 @@
 				F49702AA2578ED5C009EC288 /* PBXTargetDependency */,
 			);
 			name = "ad-earnings";
+			packageProductDependencies = (
+			);
 			productName = "ad-earnings";
 			productReference = F49702822578ED5A009EC288 /* ad-earnings.app */;
 			productType = "com.apple.product-type.application";
@@ -507,7 +609,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49702D62578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earningsTests" */;
 			buildPhases = (
-				52725AE623E21C328959E430 /* [CP] Check Pods Manifest.lock */,
+				B4151F48A48DDD17C6B3F93F /* [CP] Check Pods Manifest.lock */,
 				F497028F2578ED5C009EC288 /* Sources */,
 				F49702902578ED5C009EC288 /* Frameworks */,
 				F49702912578ED5C009EC288 /* Resources */,
@@ -526,12 +628,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49702D92578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earningsUITests" */;
 			buildPhases = (
-				B234602E9D4BBFFF60081C84 /* [CP] Check Pods Manifest.lock */,
+				1ED0BD69977ACE78050033FD /* [CP] Check Pods Manifest.lock */,
 				F497029A2578ED5C009EC288 /* Sources */,
 				F497029B2578ED5C009EC288 /* Frameworks */,
 				F497029C2578ED5C009EC288 /* Resources */,
-				EB1225D30C4FC4A9B4F81A3C /* [CP] Embed Pods Frameworks */,
-				6E25C78D49BDDFD14A4C4418 /* [CP] Copy Pods Resources */,
+				58004EE8AF71D1BC0E267E30 /* [CP] Embed Pods Frameworks */,
+				DC9A75B1B4E7602B6D4E9273 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -547,7 +649,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49702CF2578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings WatchKit App" */;
 			buildPhases = (
-				75AEC816439A817A3A3F15EA /* [CP] Check Pods Manifest.lock */,
+				6CC23CD2D9C67F0387300013 /* [CP] Check Pods Manifest.lock */,
 				F49702A52578ED5C009EC288 /* Resources */,
 				F49702CE2578ED5D009EC288 /* Embed App Extensions */,
 				1E3987B3FDC0E0D24BD365EE /* Frameworks */,
@@ -566,10 +668,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F49702CB2578ED5D009EC288 /* Build configuration list for PBXNativeTarget "ad-earnings WatchKit Extension" */;
 			buildPhases = (
-				52B23D7823310EE46F43F781 /* [CP] Check Pods Manifest.lock */,
+				C3D9F360DBE933D76921F1EA /* [CP] Check Pods Manifest.lock */,
 				F49702AF2578ED5C009EC288 /* Sources */,
 				F49702B02578ED5C009EC288 /* Frameworks */,
 				F49702B12578ED5C009EC288 /* Resources */,
+				F2D67AE5452E757C8DDC36A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -617,6 +720,8 @@
 				Base,
 			);
 			mainGroup = F49702792578ED5A009EC288;
+			packageReferences = (
+			);
 			productRefGroup = F49702832578ED5A009EC288 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -674,146 +779,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		29D9E8FCE73DEC001302D4A7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		50F329174F1EF020187F8167 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ad-earnings-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52725AE623E21C328959E430 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ad-earningsTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		52B23D7823310EE46F43F781 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ad-earnings WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5DA982161DADC17666D01BEA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6E25C78D49BDDFD14A4C4418 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		75AEC816439A817A3A3F15EA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ad-earnings WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B234602E9D4BBFFF60081C84 /* [CP] Check Pods Manifest.lock */ = {
+		1ED0BD69977ACE78050033FD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -835,7 +801,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EB1225D30C4FC4A9B4F81A3C /* [CP] Embed Pods Frameworks */ = {
+		5123C6D729E2DE9E5DF53EC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		58004EE8AF71D1BC0E267E30 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -852,6 +835,145 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		583CD0FB603A72B5FDB025AC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ad-earnings-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6CC23CD2D9C67F0387300013 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ad-earnings WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AC4DBCB138134346A452D47 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings/Pods-ad-earnings-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4151F48A48DDD17C6B3F93F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ad-earningsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3D9F360DBE933D76921F1EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ad-earnings WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC9A75B1B4E7602B6D4E9273 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings-ad-earningsUITests/Pods-ad-earnings-ad-earningsUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2D67AE5452E757C8DDC36A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ad-earnings WatchKit Extension/Pods-ad-earnings WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -862,15 +984,19 @@
 				F4790D5F257CFFC800C2385F /* AdmobMediationParams.swift in Sources */,
 				F4759461257F727600A8B550 /* Formatter.swift in Sources */,
 				F417ED53257E3F12001ACD05 /* AdmobMediationFooter.swift in Sources */,
-				F49703452578FAAB009EC288 /* Home.swift in Sources */,
+				F49703452578FAAB009EC288 /* HomeView.swift in Sources */,
 				F49703382578FA82009EC288 /* GoogleSignIn.swift in Sources */,
 				F49703142578F20A009EC288 /* AppDelegate.swift in Sources */,
 				F49702FC2578EFAF009EC288 /* GoogleDelegate.swift in Sources */,
 				F49702882578ED5A009EC288 /* ContentView.swift in Sources */,
 				F46FC23A257BAA5F003153A8 /* AdmobAccount.swift in Sources */,
+				F452CD682580C1690063886F /* ButtonStyle.swift in Sources */,
+				F41CC436257FC9B800CAC61B /* Marker.swift in Sources */,
 				F449D831257BB00500365461 /* AccountsResponse.swift in Sources */,
 				F417ED16257E3CC5001ACD05 /* AdmobMediationHeader.swift in Sources */,
 				F473A79B257F580400E8FACB /* BarChart.swift in Sources */,
+				F41CC43D257FCAB700CAC61B /* Double.swift in Sources */,
+				F452CDD32580FF240063886F /* ConnectivityController.swift in Sources */,
 				F417ED30257E3DF3001ACD05 /* AdmobMediation.swift in Sources */,
 				F429FAB5257D08FE004D9E65 /* Date.swift in Sources */,
 				F49702862578ED5A009EC288 /* ad_earningsApp.swift in Sources */,
@@ -901,11 +1027,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F48665FC2581309A0018DF09 /* Double.swift in Sources */,
 				F49702BD2578ED5C009EC288 /* NotificationController.swift in Sources */,
+				F452CDB52580FC1B0063886F /* AdmobAccount.swift in Sources */,
+				F48665AA258104EC0018DF09 /* ConnectivityController.swift in Sources */,
+				F48665F6258130980018DF09 /* Date.swift in Sources */,
 				F49702BB2578ED5C009EC288 /* ContentView.swift in Sources */,
+				F48665C7258127610018DF09 /* HomeView.swift in Sources */,
+				F452CDBB2580FC1D0063886F /* AccountsResponse.swift in Sources */,
+				F48665D225812EF60018DF09 /* AdmobMediation.swift in Sources */,
+				F48665DE258130770018DF09 /* AdmobMediationHeader.swift in Sources */,
 				F49702C12578ED5C009EC288 /* ComplicationController.swift in Sources */,
+				F48665D8258130750018DF09 /* AdmobMediationFooter.swift in Sources */,
 				F49702B92578ED5C009EC288 /* ad_earningsApp.swift in Sources */,
+				F48665EA2581307C0018DF09 /* MetricValue.swift in Sources */,
 				F49702BF2578ED5C009EC288 /* NotificationView.swift in Sources */,
+				F48665E42581307A0018DF09 /* AdmobMediationRow.swift in Sources */,
+				F48665F02581307E0018DF09 /* DimensionValue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1050,7 +1188,7 @@
 		};
 		F49702CC2578ED5D009EC288 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6EE556EC04C0222003AAB251 /* Pods-ad-earnings WatchKit Extension.debug.xcconfig */;
+			baseConfigurationReference = 1A8D187285E0FC18E0D749B0 /* Pods-ad-earnings WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -1075,7 +1213,7 @@
 		};
 		F49702CD2578ED5D009EC288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 333D619A89405A1805410F02 /* Pods-ad-earnings WatchKit Extension.release.xcconfig */;
+			baseConfigurationReference = E26F32FEB1AADD57A840C61F /* Pods-ad-earnings WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
@@ -1101,7 +1239,7 @@
 		};
 		F49702D02578ED5D009EC288 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C13E3A79CDC922E45D72D81F /* Pods-ad-earnings WatchKit App.debug.xcconfig */;
+			baseConfigurationReference = 1E3A9431F10B8346B74AE5B9 /* Pods-ad-earnings WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1122,7 +1260,7 @@
 		};
 		F49702D12578ED5D009EC288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ACA3B2F18C55C0B05273CF92 /* Pods-ad-earnings WatchKit App.release.xcconfig */;
+			baseConfigurationReference = 7F5D83A3E45AF38F6A6E4F6C /* Pods-ad-earnings WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1144,7 +1282,7 @@
 		};
 		F49702D42578ED5D009EC288 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87529419EA1ACF3FD017CD3C /* Pods-ad-earnings.debug.xcconfig */;
+			baseConfigurationReference = 8E9A217AEA6D88F0DB3ED631 /* Pods-ad-earnings.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1168,7 +1306,7 @@
 		};
 		F49702D52578ED5D009EC288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A78359A5E7042C27CC65682 /* Pods-ad-earnings.release.xcconfig */;
+			baseConfigurationReference = FB858DBD103F292A5560DC4E /* Pods-ad-earnings.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1193,7 +1331,7 @@
 		};
 		F49702D72578ED5D009EC288 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD608C478033EE1BA244E5F1 /* Pods-ad-earningsTests.debug.xcconfig */;
+			baseConfigurationReference = 9373477C6C6055F69E64A41E /* Pods-ad-earningsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1217,7 +1355,7 @@
 		};
 		F49702D82578ED5D009EC288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8F44C5478A7EBAE4A3C7C5F4 /* Pods-ad-earningsTests.release.xcconfig */;
+			baseConfigurationReference = 5B35E04454FA796F79F9BABA /* Pods-ad-earningsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1242,7 +1380,7 @@
 		};
 		F49702DA2578ED5D009EC288 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92799139BB4EC23B1C25FFCB /* Pods-ad-earnings-ad-earningsUITests.debug.xcconfig */;
+			baseConfigurationReference = A9D5F05213DE998EB020DC2C /* Pods-ad-earnings-ad-earningsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1265,7 +1403,7 @@
 		};
 		F49702DB2578ED5D009EC288 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5C9642E81270C9E1F4EE1024 /* Pods-ad-earnings-ad-earningsUITests.release.xcconfig */;
+			baseConfigurationReference = 3651B84494E4256554779604 /* Pods-ad-earnings-ad-earningsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,6 +1,6 @@
 import Foundation
 
-struct MetricValue {
+struct MetricValue: Encodable {
     init(metric: Metric, value: Double) {
         self.metric = metric
         self.value = value
@@ -13,4 +13,15 @@ struct MetricValue {
     
     var metric: Metric
     var value: Double
+    
+    
+    enum CodingKeys: String, CodingKey {
+        case metric, value
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(metric.rawValue, forKey: .metric)
+        try container.encode(value, forKey: .value)
+    }
 }
