@@ -103,6 +103,14 @@ struct HomeView: View {
                         Text("\(endDate, formatter: dateFormatter)")
                     }
                     Spacer()
+                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 6, trailing: 0))
+                HStack {
+                    Spacer()
+                    HStack {
+                        Text("Range Total:").foregroundColor(.gray).font(.footnote)
+                        Text(String(format: "%.2f", googleDelegate.getTotalEarningsOfMediationData() ?? 0)).bold()
+                    }
+                    Spacer()
                 }
             }
         }

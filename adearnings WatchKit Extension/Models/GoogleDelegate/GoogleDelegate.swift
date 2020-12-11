@@ -197,4 +197,8 @@ class GoogleDelegate: ObservableObject {
         return mediationData?.rows.map({ ($0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2) + " - " + (admobAccount?.currencyCode ?? "")), $0.metricValue.value)
         })
     }
+    
+    func getTotalEarningsOfMediationData() -> Double? {
+        return mediationData?.rows.reduce(0, {$0 + $1.metricValue.value})
+    }
 }
