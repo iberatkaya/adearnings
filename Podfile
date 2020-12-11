@@ -1,38 +1,38 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
 
-target 'ad-earnings' do
+target 'adearnings' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'GoogleSignIn'
   pod 'ExytePopupView'
+  pod 'Charts'
 
-  # Pods for ad-earnings
+  # Pods for adearnings
 
-  target 'ad-earningsTests' do
+  target 'adearningsTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
-  target 'ad-earningsUITests' do
+  target 'adearningsUITests' do
     # Pods for testing
   end
 
 end
 
-target 'ad-earnings WatchKit App' do
+target 'adearnings WatchKit App' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for ad-earnings WatchKit App
+  # Pods for adearnings WatchKit App
 
 end
 
-target 'ad-earnings WatchKit Extension' do
+target 'adearnings WatchKit Extension' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-
-  # Pods for ad-earnings WatchKit Extension
+  # Pods for adearnings WatchKit Extension
 
 end
