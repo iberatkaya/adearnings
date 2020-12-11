@@ -68,7 +68,7 @@ struct HomeView: View {
                         HStack {
                             Spacer()
                             VStack {
-                                Text("Start Date").font(.title2)
+                                Text("Start Date").font(.title3)
                                 DatePicker("Start Date",
                                            selection: $startDate,
                                            in: (endDate - TimeInterval(weekInSeconds * 6))...endDate,
@@ -76,7 +76,7 @@ struct HomeView: View {
                             }
                             Spacer()
                             VStack {
-                                Text("End Date").font(.title2)
+                                Text("End Date").font(.title3)
                                 DatePicker("End Date",
                                            selection: $endDate,
                                            in: ...Date(),
@@ -87,7 +87,15 @@ struct HomeView: View {
                         BarChart(
                             xValues: googleDelegate.mapXValuesForChart() ?? [],
                             yValues: googleDelegate.mapYValuesForChart() ?? [])
-                            .frame(minHeight: 400)
+                            .frame(minHeight: 380)
+                        HStack {
+                            Spacer()
+                            HStack {
+                                Text("Range Total:").foregroundColor(.gray)
+                                Text(String(format: "%.2f", googleDelegate.getTotalEarningsOfMediationData() ?? 0)).bold()
+                            }
+                            Spacer()
+                        }
                         HStack {
                             Spacer()
                             Button(action: {

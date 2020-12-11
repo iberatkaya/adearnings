@@ -59,9 +59,11 @@ struct HomeView: View {
                 HStack {
                     Button(action: {
                         currentIndex -= 1
+                        startDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                        endDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
                         googleDelegate.mediationReport(
-                            startDate: Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1)),
-                            endDate: Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            startDate: startDate,
+                            endDate: endDate
                         )
                     }) {
                         Image(systemName: "arrow.backward")
@@ -79,9 +81,11 @@ struct HomeView: View {
                             return
                         }
                         currentIndex += 1
+                        startDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                        endDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
                         googleDelegate.mediationReport(
-                            startDate: Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1)),
-                            endDate: Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            startDate: startDate,
+                            endDate: endDate
                         )
                     }) {
                         Image(systemName: "arrow.forward")
@@ -91,12 +95,12 @@ struct HomeView: View {
                     Spacer()
                     VStack {
                         Text("Start Date").foregroundColor(.gray).font(.footnote)
-                        Text("\(startDate - TimeInterval(weekInSeconds) * Double((-currentIndex + 1)), formatter: dateFormatter)")
+                        Text("\(startDate, formatter: dateFormatter)")
                     }
                     Spacer()
                     VStack {
                         Text("End Date").foregroundColor(.gray).font(.footnote)
-                        Text("\(endDate - TimeInterval(weekInSeconds) * Double((-currentIndex)), formatter: dateFormatter)")
+                        Text("\(endDate, formatter: dateFormatter)")
                     }
                     Spacer()
                 }

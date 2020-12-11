@@ -213,4 +213,8 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
     func mapYValuesForChart() -> [Double]? {
         return mediationData?.rows.map({ $0.metricValue.value })
     }
+    
+    func getTotalEarningsOfMediationData() -> Double? {
+        return mediationData?.rows.reduce(0, {$0 + $1.metricValue.value})
+    }
 }
