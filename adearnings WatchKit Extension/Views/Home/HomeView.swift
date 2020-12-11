@@ -112,6 +112,18 @@ struct HomeView: View {
                     }
                     Spacer()
                 }
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        startDate = Date() - TimeInterval(weekInSeconds)
+                        endDate = Date()
+                        self.googleDelegate.fetchCurrentWeekMediationReport()
+                    }) {
+                        Text("Refresh")
+                    }
+                    
+                    Spacer()
+                }
             }
         }
     }

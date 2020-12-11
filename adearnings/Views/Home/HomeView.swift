@@ -1,6 +1,7 @@
 import SwiftUI
 import Charts
 import ExytePopupView
+import SwiftUIRefresh
 
 struct HomeView: View {
     ///The Google Delegate Environment Object.
@@ -101,13 +102,18 @@ struct HomeView: View {
                             Button(action: {
                                 googleDelegate.mediationReport(
                                     startDate: startDate,
-                                    endDate: endDate)
+                                    endDate: endDate
+                                )
                             }) {
                                 Text("Get Report")
                             }.buttonStyle(BlueButtonStyle())
                             Spacer()
                         }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                    }.listStyle(PlainListStyle())
+                    }.listStyle(PlainListStyle()).pullToRefresh(isShowing: $isShowing) {
+                        startDate = Date() - TimeInterval(weekInSeconds)
+                        endDate = Date()
+                        self.googleDelegate.fetchCurrentWeekMediationReport(completed: {_ in self.isShowing = false})
+                    }
                 }
             }
             .popup(isPresented: $showToast, type: .toast, position: .bottom, autohideIn: 2) {

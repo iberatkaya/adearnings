@@ -12,6 +12,7 @@
 		809C5F04AFD05E7CE09FAD7D /* Pods_adearnings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DF1A7FE31410A7757D29B9B /* Pods_adearnings.framework */; };
 		BD91968D6FFDF75C9B575145 /* Pods_adearnings_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7A5923A157347D0DC07B963 /* Pods_adearnings_WatchKit_Extension.framework */; };
 		DD85AE9BA576A307168A860E /* Pods_adearnings_adearningsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D318968F5D309A35B686416 /* Pods_adearnings_adearningsUITests.framework */; };
+		F49E7A6B2584268B006DA793 /* SwiftUIRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = F49E7A6A2584268B006DA793 /* SwiftUIRefresh */; };
 		F4F7A1F22583D6AC00C5668B /* adearningsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7A1F12583D6AC00C5668B /* adearningsApp.swift */; };
 		F4F7A1F42583D6AC00C5668B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F7A1F32583D6AC00C5668B /* ContentView.swift */; };
 		F4F7A1F62583D6AF00C5668B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4F7A1F52583D6AF00C5668B /* Assets.xcassets */; };
@@ -202,6 +203,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F49E7A6B2584268B006DA793 /* SwiftUIRefresh in Frameworks */,
 				809C5F04AFD05E7CE09FAD7D /* Pods_adearnings.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,6 +607,9 @@
 				F4F7A2162583D6AF00C5668B /* PBXTargetDependency */,
 			);
 			name = adearnings;
+			packageProductDependencies = (
+				F49E7A6A2584268B006DA793 /* SwiftUIRefresh */,
+			);
 			productName = adearnings;
 			productReference = F4F7A1EE2583D6AC00C5668B /* adearnings.app */;
 			productType = "com.apple.product-type.application";
@@ -728,6 +733,7 @@
 			mainGroup = F4F7A1E52583D6AC00C5668B;
 			packageReferences = (
 				F4F7A2C02583D7DC00C5668B /* XCRemoteSwiftPackageReference "ChartView" */,
+				F49E7A692584268B006DA793 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */,
 			);
 			productRefGroup = F4F7A1EF2583D6AC00C5668B /* Products */;
 			projectDirPath = "";
@@ -1475,6 +1481,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F49E7A692584268B006DA793 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/timbersoftware/SwiftUIRefresh.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
+			};
+		};
 		F4F7A2C02583D7DC00C5668B /* XCRemoteSwiftPackageReference "ChartView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView.git";
@@ -1486,6 +1500,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F49E7A6A2584268B006DA793 /* SwiftUIRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F49E7A692584268B006DA793 /* XCRemoteSwiftPackageReference "SwiftUIRefresh" */;
+			productName = SwiftUIRefresh;
+		};
 		F4F7A2C12583D7DC00C5668B /* SwiftUICharts */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4F7A2C02583D7DC00C5668B /* XCRemoteSwiftPackageReference "ChartView" */;

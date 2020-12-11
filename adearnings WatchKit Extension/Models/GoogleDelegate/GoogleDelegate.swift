@@ -14,15 +14,7 @@ class GoogleDelegate: ObservableObject {
         if let refreshTokenData = UserDefaults.standard.string(forKey:  "refreshToken") {
             self.refreshToken = refreshTokenData
         }
-        mediationReport(
-            startDate: Date() - TimeInterval(weekInSeconds),
-            endDate: Date(),
-            completed: {report in
-                DispatchQueue.main.async {
-                    self.currentWeekMediationData = report
-                }
-            }
-        )
+        fetchCurrentWeekMediationReport()
     }
     
     @Published var oAuthToken: String? {
@@ -94,15 +86,7 @@ class GoogleDelegate: ObservableObject {
                     if let errorCode = error["code"] as? Int {
                         if(errorCode == 401){
                             self.refreshOAuthToken(completed: {
-                                self.mediationReport(
-                                    startDate: Date() - TimeInterval(weekInSeconds),
-                                    endDate: Date(),
-                                    completed: {report in
-                                        DispatchQueue.main.async {
-                                            self.currentWeekMediationData = report
-                                        }
-                                    }
-                                )
+                                self.fetchCurrentWeekMediationReport(completed: {report in completed(report)})
                             })
                         }
                     }
@@ -163,6 +147,17 @@ class GoogleDelegate: ObservableObject {
                 completed()
             }
         }.resume()
+    }
+    
+    func fetchCurrentWeekMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
+        currentWeekMediationData?.rows = []
+        mediationReport(
+            startDate: Date() - TimeInterval(weekInSeconds),
+            endDate: Date(),
+            completed: {report in
+                self.currentWeekMediationData = report
+                completed(report)
+            })
     }
     
     ///Get today's earnings.

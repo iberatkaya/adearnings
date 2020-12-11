@@ -58,13 +58,22 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         if(admobAccount != nil){
             print("send admob account to watch")
             connectivityController?.sendAdmobAccountToWatch(account: admobAccount!)
-            mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), completed: {report in self.currentWeekMediationData = report})
+            fetchCurrentWeekMediationReport()
         }
         else {
-            accountsRequest(completed: {success in
-                self.mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), completed: {report in self.currentWeekMediationData = report})
-            })
+            fetchCurrentWeekMediationReport()
         }
+    }
+    
+    func fetchCurrentWeekMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
+        currentWeekMediationData?.rows = []
+        mediationReport(
+            startDate: Date() - TimeInterval(weekInSeconds),
+            endDate: Date(),
+            completed: {report in
+                self.currentWeekMediationData = report
+                completed(report)
+            })
     }
     
     ///Make a Google Sign In in SwiftUI.
@@ -207,7 +216,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
     func mapXValuesForChart() -> [String]? {
         return mediationData?.rows
             .map({ $0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2))
-        })
+            })
     }
     
     func mapYValuesForChart() -> [Double]? {
