@@ -164,6 +164,7 @@ class GoogleDelegate: ObservableObject {
     ///Fetch the mediation reports based on the current week.
     func fetchInitialMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
         currentWeekMediationData?.rows = []
+        clicksMediationData?.rows = []
         mediationReport(
             startDate: Date() - TimeInterval(weekInSeconds),
             endDate: Date(),
@@ -174,6 +175,12 @@ class GoogleDelegate: ObservableObject {
                 }
                 completed(report)
             })
+        mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), metric: Metric.CLICKS, completed: { report in
+            DispatchQueue.main.async {
+                self.clicksMediationData = report
+                
+            }
+        })
     }
     
     ///Get today's earnings.

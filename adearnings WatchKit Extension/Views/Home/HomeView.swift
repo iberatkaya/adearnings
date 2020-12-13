@@ -55,11 +55,13 @@ struct HomeView: View {
                 HStack {
                     Spacer()
                     Button(action: {
-                        //Reset all the dates
+                        //Reset all the dates.
                         earningsStartDate = Date() - TimeInterval(weekInSeconds)
                         earningsEndDate = Date()
                         clicksStartDate = Date() - TimeInterval(weekInSeconds)
                         clicksEndDate = Date()
+                        //Reset the current index.
+                        currentIndex = 0
                         self.googleDelegate.fetchInitialMediationReport(completed: {_ in self.isShowing = false})
                     }) {
                         Text("Refresh")
@@ -70,7 +72,7 @@ struct HomeView: View {
                 
                 Divider().padding(EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0))
                 
-                //The Earnings Medation Report graph
+                //The Earnings Medation Report graph.
                 VStack {
                     Text("Earnings").font(.title3)
                     HStack {
