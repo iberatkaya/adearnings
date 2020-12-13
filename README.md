@@ -2,6 +2,11 @@
 
 > Ad Earnings is an iOS and WatchOS app made with SwiftUI. It displays the an AdMob user's earnings. It is currently under development.
 
+<p align="center">
+    <img alt="Example Video" src="https://raw.githubusercontent.com/iberatkaya/adearnings/master/screenshots/1.gif" width="180" height="320">
+    <img alt="Example Video" src="https://raw.githubusercontent.com/iberatkaya/adearnings/master/screenshots/2.gif" width="254" height="320">
+</p>
+
 ## Author
 
 👤 **Ibrahim Berat Kaya**
