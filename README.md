@@ -4,7 +4,7 @@
 
 <p align="center">
     <img alt="Example Video" src="https://raw.githubusercontent.com/iberatkaya/adearnings/master/screenshots/1.gif" width="270" height="480">
-    <img alt="Example Video" src="https://raw.githubusercontent.com/iberatkaya/adearnings/master/screenshots/2.gif" width="203" height="256">
+    <img alt="Example Video" src="https://raw.githubusercontent.com/iberatkaya/adearnings/master/screenshots/2.gif" width="259" height="320">
 </p>
 
 ## Author
