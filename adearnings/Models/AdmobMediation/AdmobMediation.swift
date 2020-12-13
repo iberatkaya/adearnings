@@ -30,7 +30,7 @@ struct AdmobMediation: Encodable, Decodable {
         try container.encode(footer, forKey: .footer)
     }
     
-    static func fromDicts(jsons: [[String: Any]]) -> AdmobMediation? {
+    static func fromDicts(jsons: [[String: Any]], metric: Metric = Metric.ESTIMATED_EARNINGS) -> AdmobMediation? {
         var header: AdmobMediationHeader?
         var rows: [AdmobMediationRow] = []
         var footer: AdmobMediationFooter?
@@ -43,7 +43,7 @@ struct AdmobMediation: Encodable, Decodable {
                     header = AdmobMediationHeader.fromDict(json: val as! [String : Any])
                 }
                 else if key == "row" {
-                    if let row: AdmobMediationRow = AdmobMediationRow.fromDict(json: val as! [String : Any]) {
+                    if let row: AdmobMediationRow = AdmobMediationRow.fromDict(json: val as! [String : Any], metric: metric) {
                         rows.append(row)
                     }
                 }

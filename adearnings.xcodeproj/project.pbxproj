@@ -480,8 +480,8 @@
 		F4F7A2702583D72500C5668B /* AdmobMediationRow */ = {
 			isa = PBXGroup;
 			children = (
-				F4F7A2712583D72500C5668B /* MetricValue */,
 				F4F7A2732583D72500C5668B /* AdmobMediationRow.swift */,
+				F4F7A2712583D72500C5668B /* MetricValue */,
 				F4F7A2742583D72500C5668B /* DimensionValue */,
 			);
 			path = AdmobMediationRow;
@@ -1287,7 +1287,7 @@
 				DEVELOPMENT_TEAM = QH78WN2XWN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = adearnings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1311,7 +1311,7 @@
 				DEVELOPMENT_TEAM = QH78WN2XWN;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = adearnings/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

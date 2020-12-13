@@ -33,6 +33,9 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
     ///The Mediation Data requested by the user.
     @Published var mediationData: AdmobMediation?
     
+    ///The Mediation Report based on clicks
+    @Published var clicksMediationData: AdmobMediation?
+    
     ///Get the current Google User.
     func currentUser() -> GIDGoogleUser? {
         return GIDSignIn.sharedInstance()?.currentUser
@@ -58,20 +61,40 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         if(admobAccount != nil){
             print("send admob account to watch")
             connectivityController?.sendAdmobAccountToWatch(account: admobAccount!)
-            fetchCurrentWeekMediationReport()
+            fetchInitialMediationReport()
+            mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), metric: Metric.CLICKS, completed: { report in
+                DispatchQueue.main.async {
+                    self.clicksMediationData = report
+                    
+                }
+            })
         }
         else {
-            fetchCurrentWeekMediationReport()
+            accountsRequest(completed: {success in
+                if(success){
+                    self.fetchInitialMediationReport()
+                    self.mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), metric: Metric.CLICKS, completed: { report in
+                        DispatchQueue.main.async {
+                            self.clicksMediationData = report
+                            
+                        }
+                    })
+                }
+            })
         }
     }
     
-    func fetchCurrentWeekMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
+    ///Fetch the mediation reports based on the current week.
+    func fetchInitialMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
         currentWeekMediationData?.rows = []
         mediationReport(
             startDate: Date() - TimeInterval(weekInSeconds),
             endDate: Date(),
             completed: {report in
-                self.currentWeekMediationData = report
+                DispatchQueue.main.async {
+                    self.mediationData = report
+                    self.currentWeekMediationData = report
+                }
                 completed(report)
             })
     }
@@ -172,17 +195,15 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
             }
             do {
                 let parsedData = try JSONSerialization.jsonObject(with: data) as? [[String: Any]]
+                print(parsedData)
                 guard let dictData = parsedData else {
                     completed(nil)
                     return
                 }
                 
-                var admobMediation: AdmobMediation? = AdmobMediation.fromDicts(jsons: dictData)
-                DispatchQueue.main.async {
-                    admobMediation?.rows.reverse()
-                    completed(admobMediation)
-                    self.mediationData = admobMediation
-                }
+                var admobMediation: AdmobMediation? = AdmobMediation.fromDicts(jsons: dictData, metric: metric)
+                admobMediation?.rows.reverse()
+                completed(admobMediation)
             } catch {
                 print("JSONDecoder error:", error)
                 completed(nil)
@@ -213,17 +234,31 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         })
     }
     
-    func mapXValuesForChart() -> [String]? {
+    func mapEarningsXValuesForChart() -> [String]? {
         return mediationData?.rows
             .map({ $0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2))
             })
     }
     
-    func mapYValuesForChart() -> [Double]? {
+    func mapEarningsYValuesForChart() -> [Double]? {
         return mediationData?.rows.map({ $0.metricValue.value })
+    }
+    
+    func mapClicksXValuesForChart() -> [String]? {
+        return clicksMediationData?.rows
+            .map({ $0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2))
+            })
+    }
+    
+    func mapClicksYValuesForChart() -> [Double]? {
+        return clicksMediationData?.rows.map({ $0.metricValue.value })
     }
     
     func getTotalEarningsOfMediationData() -> Double? {
         return mediationData?.rows.reduce(0, {$0 + $1.metricValue.value})
+    }
+    
+    func getTotalClicksOfMediationData() -> Double? {
+        return clicksMediationData?.rows.reduce(0, {$0 + $1.metricValue.value})
     }
 }

@@ -9,10 +9,14 @@ struct HomeView: View {
     ///The current index used to go over the weeks in the Bar Chart.
     @State var currentIndex = 0
     
-    ///The start date of the analytics.
-    @State var startDate = Date() - TimeInterval(weekInSeconds)
-    ///The end date of the analytics.
-    @State var endDate = Date()
+    ///The start date of the earnings report.
+    @State var earningsStartDate = Date() - TimeInterval(weekInSeconds)
+    ///The end date of the earnings report.
+    @State var earningsEndDate = Date()
+    ///The start date of the clicks report.
+    @State var clicksStartDate = Date() - TimeInterval(weekInSeconds)
+    ///The end date of the clicks report.
+    @State var clicksEndDate = Date()
     
     @State var isShowing = false
     
@@ -47,82 +51,172 @@ struct HomeView: View {
                         Text("This Week").font(.footnote).bold()
                         Text(String(format: "%.2f", googleDelegate.getCurrentWeekEarningsTotal() ?? 0) + " " + (googleDelegate.admobAccount?.currencyCode ?? "")).bold()
                     }
-                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
-                BarChartView(
-                    data: ChartData(
-                        values: googleDelegate.mapCurrentWeekMediationDataToChartData() ?? []),
-                    title: "Week",
-                    legend: "Date - " + (googleDelegate.admobAccount?.currencyCode ?? ""),
-                    style: ChartStyle(backgroundColor: Color.black, accentColor: Color.blue, gradientColor: GradientColor(start: Color.black, end: Color.black), textColor: Color.gray, legendTextColor: Color.blue, dropShadowColor: Color.black),
-                    dropShadow: false
-                )
-                HStack {
-                    Button(action: {
-                        currentIndex -= 1
-                        startDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
-                        endDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
-                        googleDelegate.mediationReport(
-                            startDate: startDate,
-                            endDate: endDate
-                        )
-                    }) {
-                        Image(systemName: "arrow.backward")
-                    }
-                    BarChartView(
-                        data: ChartData(
-                            values: googleDelegate.mapMediationDataToChartData() ?? []),
-                        title: "Browse",
-                        legend: "Date - " + (googleDelegate.admobAccount?.currencyCode ?? ""),
-                        style: ChartStyle(backgroundColor: Color.black, accentColor: Color.blue, gradientColor: GradientColor(start: Color.black, end: Color.black), textColor: Color.gray, legendTextColor: Color.blue, dropShadowColor: Color.black),
-                        dropShadow: false
-                    )
-                    Button(action: {
-                        if(currentIndex == 0) {
-                            return
-                        }
-                        currentIndex += 1
-                        startDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
-                        endDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
-                        googleDelegate.mediationReport(
-                            startDate: startDate,
-                            endDate: endDate
-                        )
-                    }) {
-                        Image(systemName: "arrow.forward")
-                    }
-                }
-                HStack {
-                    Spacer()
-                    VStack {
-                        Text("Start Date").foregroundColor(.gray).font(.footnote)
-                        Text("\(startDate, formatter: dateFormatter)")
-                    }
-                    Spacer()
-                    VStack {
-                        Text("End Date").foregroundColor(.gray).font(.footnote)
-                        Text("\(endDate, formatter: dateFormatter)")
-                    }
-                    Spacer()
-                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 6, trailing: 0))
-                HStack {
-                    Spacer()
-                    HStack {
-                        Text("Range Total:").foregroundColor(.gray).font(.footnote)
-                        Text(String(format: "%.2f", googleDelegate.getTotalEarningsOfMediationData() ?? 0)).bold()
-                    }
-                    Spacer()
-                }
+                }.padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
                 HStack {
                     Spacer()
                     Button(action: {
-                        startDate = Date() - TimeInterval(weekInSeconds)
-                        endDate = Date()
-                        self.googleDelegate.fetchCurrentWeekMediationReport()
+                        //Reset all the dates
+                        earningsStartDate = Date() - TimeInterval(weekInSeconds)
+                        earningsEndDate = Date()
+                        clicksStartDate = Date() - TimeInterval(weekInSeconds)
+                        clicksEndDate = Date()
+                        self.googleDelegate.fetchInitialMediationReport(completed: {_ in self.isShowing = false})
                     }) {
                         Text("Refresh")
                     }
                     
                     Spacer()
+                }
+                
+                Divider().padding(EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0))
+                
+                //The Earnings Medation Report graph
+                VStack {
+                    Text("Earnings").font(.title3)
+                    HStack {
+                        Button(action: {
+                            currentIndex -= 1
+                            earningsStartDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                            earningsEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            googleDelegate.mediationData?.rows = []
+                            googleDelegate.mediationReport(
+                                startDate: earningsStartDate,
+                                endDate: earningsEndDate,
+                                completed: { report in
+                                    DispatchQueue.main.async {
+                                        googleDelegate.mediationData = report
+                                    }
+                                }
+                            )
+                        }) {
+                            Image(systemName: "arrow.backward")
+                        }
+                        BarChartView(
+                            data: ChartData(
+                                values: googleDelegate.mapMediationDataToChartData() ?? []),
+                            title: "Browse",
+                            legend: "Date - " + (googleDelegate.admobAccount?.currencyCode ?? ""),
+                            style: ChartStyle(backgroundColor: Color.black, accentColor: Color.blue, gradientColor: GradientColor(start: Color.black, end: Color.black), textColor: Color.gray, legendTextColor: Color.blue, dropShadowColor: Color.black),
+                            dropShadow: false
+                        )
+                        Button(action: {
+                            if(currentIndex == 0) {
+                                return
+                            }
+                            currentIndex += 1
+                            earningsStartDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                            earningsEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            googleDelegate.mediationData?.rows = []
+                            googleDelegate.mediationReport(
+                                startDate: earningsStartDate,
+                                endDate: earningsEndDate,
+                                completed: { report in
+                                    DispatchQueue.main.async {
+                                        googleDelegate.mediationData = report
+                                    }
+                                }
+                            )
+                        }) {
+                            Image(systemName: "arrow.forward")
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text("Start Date").foregroundColor(.gray).font(.footnote)
+                            Text("\(earningsStartDate, formatter: dateFormatter)")
+                        }
+                        Spacer()
+                        VStack {
+                            Text("End Date").foregroundColor(.gray).font(.footnote)
+                            Text("\(earningsEndDate, formatter: dateFormatter)")
+                        }
+                        Spacer()
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 6, trailing: 0))
+                    HStack {
+                        Spacer()
+                        HStack {
+                            Text("Range Total:").foregroundColor(.gray).font(.footnote)
+                            Text(String(format: "%.2f", googleDelegate.getTotalEarningsOfMediationData() ?? 0)).bold()
+                        }
+                        Spacer()
+                    }
+                }
+                
+                Divider().padding(EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0))
+                
+                //The Clicks Medation Report graph.
+                VStack {
+                    Text("Clicks").font(.title3)
+                    HStack {
+                        Button(action: {
+                            currentIndex -= 1
+                            earningsStartDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                            earningsEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            googleDelegate.clicksMediationData?.rows = []
+                            googleDelegate.mediationReport(
+                                startDate: earningsStartDate,
+                                endDate: earningsEndDate,
+                                completed: { report in
+                                    DispatchQueue.main.async {
+                                        googleDelegate.clicksMediationData = report
+                                    }
+                                }
+                            )
+                        }) {
+                            Image(systemName: "arrow.backward")
+                        }
+                        BarChartView(
+                            data: ChartData(
+                                values: googleDelegate.mapClickMediationDataToChartData() ?? []),
+                            title: "Browse",
+                            legend: "Date - " + (googleDelegate.admobAccount?.currencyCode ?? ""),
+                            style: ChartStyle(backgroundColor: Color.black, accentColor: Color.blue, gradientColor: GradientColor(start: Color.black, end: Color.black), textColor: Color.gray, legendTextColor: Color.blue, dropShadowColor: Color.black),
+                            dropShadow: false
+                        )
+                        Button(action: {
+                            if(currentIndex == 0) {
+                                return
+                            }
+                            currentIndex += 1
+                            clicksStartDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                            clicksEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            googleDelegate.clicksMediationData?.rows = []
+                            googleDelegate.mediationReport(
+                                startDate: earningsStartDate,
+                                endDate: earningsEndDate,
+                                metric: Metric.CLICKS,
+                                completed: { report in
+                                    DispatchQueue.main.async {
+                                        googleDelegate.clicksMediationData = report
+                                    }
+                                }
+                            )
+                        }) {
+                            Image(systemName: "arrow.forward")
+                        }
+                    }
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Text("Start Date").foregroundColor(.gray).font(.footnote)
+                            Text("\(clicksStartDate, formatter: dateFormatter)")
+                        }
+                        Spacer()
+                        VStack {
+                            Text("End Date").foregroundColor(.gray).font(.footnote)
+                            Text("\(clicksEndDate, formatter: dateFormatter)")
+                        }
+                        Spacer()
+                    }.padding(EdgeInsets(top: 0, leading: 0, bottom: 6, trailing: 0))
+                    HStack {
+                        Spacer()
+                        HStack {
+                            Text("Range Total:").foregroundColor(.gray).font(.footnote)
+                            Text(String(format: "%.2f", googleDelegate.getTotalOfClicksMediationData() ?? 0)).bold()
+                        }
+                        Spacer()
+                    }
                 }
             }
         }

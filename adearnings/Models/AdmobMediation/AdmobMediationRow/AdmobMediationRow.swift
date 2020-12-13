@@ -25,7 +25,7 @@ struct AdmobMediationRow: Encodable, Decodable {
         try container.encode(metricValue, forKey: .metricValue)
     }
     
-    static func fromDict(json: [String: Any]) -> AdmobMediationRow? {
+    static func fromDict(json: [String: Any], metric: Metric = Metric.ESTIMATED_EARNINGS) -> AdmobMediationRow? {
         guard let dimensionValues = json["dimensionValues"] as? [String: Any],
               let metricValues = json["metricValues"] as? [String: Any]
         else {
@@ -40,10 +40,17 @@ struct AdmobMediationRow: Encodable, Decodable {
             return nil
         }
         
-        guard let dimensionValue = dimensionVal["value"] as? String,
-              let metricValue = (metricVal["microsValue"] as? NSString)?.doubleValue
+        guard let dimensionValue = dimensionVal["value"] as? String else {
+            return nil
+        }
+        
+        var metricValue: Double
+        
+        if(metric == Metric.CLICKS) {
+            metricValue = Double((metricVal["integerValue"] as? NSString)?.integerValue ?? 0)
+        }
         else {
-                return nil
+            metricValue = ((metricVal["microsValue"] as? NSString)?.doubleValue ?? 0) / 1_000_000
         }
         
         if let dimensionLabel = dimensionVal["displayLabel"] as? String {
@@ -55,7 +62,7 @@ struct AdmobMediationRow: Encodable, Decodable {
                 ),
                 metricValue: MetricValue(
                     metric: metricKey,
-                    value: (metricValue / 1_000_000).rounded(toPlaces: 2)
+                    value: metricValue.rounded(toPlaces: 2)
                 )
             )
         }
@@ -66,7 +73,7 @@ struct AdmobMediationRow: Encodable, Decodable {
             ),
             metricValue: MetricValue(
                 metric: metricKey,
-                value: (metricValue / 1_000_000).rounded(toPlaces: 2)
+                value: metricValue.rounded(toPlaces: 2)
             )
         )
     }

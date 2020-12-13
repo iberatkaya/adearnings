@@ -7,14 +7,19 @@ struct HomeView: View {
     ///The Google Delegate Environment Object.
     @EnvironmentObject var googleDelegate: GoogleDelegate
     
-    ///The start date of the analytics. 604800 is a week in seconds.
-    @State var startDate = Date() - TimeInterval(weekInSeconds)
-    ///The end date of the analytics.
-    @State var endDate = Date()
+    ///The start date of the earnings report.
+    @State var earningsStartDate = Date() - TimeInterval(weekInSeconds)
+    ///The end date of the earnings report.
+    @State var earningsEndDate = Date()
+    ///The start date of the clicks report.
+    @State var clicksStartDate = Date() - TimeInterval(weekInSeconds)
+    ///The end date of the clicks report.
+    @State var clicksEndDate = Date()
     
-    ///The boolean that will display a toast
+    ///The boolean that will display a toast.
     @State var showToast = false
     
+    ///The boolean that will be used in pull to refresh.
     @State var isShowing = false
     
     ///On mount, attempt to make a silent sign in.
@@ -65,54 +70,142 @@ struct HomeView: View {
                                 Text(String(format: "%.2f", googleDelegate.getCurrentWeekEarningsTotal() ?? 0) + " " + (googleDelegate.admobAccount?.currencyCode ?? "")).bold()
                             }
                             Spacer()
-                        }.padding(EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0)).border(Color.black.opacity(0.3)).padding(EdgeInsets(top: 2, leading: 16, bottom: 6, trailing: 16))
-                        HStack {
-                            Spacer()
+                        }.padding(EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.black.opacity(0.3), lineWidth: 2)
+                        ).padding(EdgeInsets(top: 2, leading: 16, bottom: 6, trailing: 16))
+                        VStack {
                             VStack {
-                                Text("Start Date").font(.title3)
-                                DatePicker("Start Date",
-                                           selection: $startDate,
-                                           in: (endDate - TimeInterval(weekInSeconds * 6))...endDate,
-                                           displayedComponents: .date).labelsHidden()
-                            }
-                            Spacer()
-                            VStack {
-                                Text("End Date").font(.title3)
-                                DatePicker("End Date",
-                                           selection: $endDate,
-                                           in: ...Date(),
-                                           displayedComponents: .date).labelsHidden()
-                            }
-                            Spacer()
-                        }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
-                        BarChart(
-                            xValues: googleDelegate.mapXValuesForChart() ?? [],
-                            yValues: googleDelegate.mapYValuesForChart() ?? [])
-                            .frame(minHeight: 380)
-                        HStack {
-                            Spacer()
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        Text("Earnings").font(.title2)
+                                        Spacer()
+                                    }.padding(EdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 0))
+                                    VStack {
+                                        HStack {
+                                            Text("Range Total:").foregroundColor(.gray)
+                                            Text(String(format: "%.2f", googleDelegate.getTotalEarningsOfMediationData() ?? 0)).bold()
+                                        }
+                                    }
+                                }
+                                Divider()
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Text("Start Date").font(.title3)
+                                        DatePicker("Start Date",
+                                                   selection: $earningsStartDate,
+                                                   in: (earningsEndDate - TimeInterval(weekInSeconds * 6))...earningsEndDate,
+                                                   displayedComponents: .date).labelsHidden()
+                                    }
+                                    Spacer()
+                                    VStack {
+                                        Text("End Date").font(.title3)
+                                        DatePicker("End Date",
+                                                   selection: $earningsEndDate,
+                                                   in: earningsStartDate...Date(),
+                                                   displayedComponents: .date).labelsHidden()
+                                    }
+                                    Spacer()
+                                }
+                            }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)).overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.black.opacity(0.3), lineWidth: 2)
+                            )
+                            BarChart(
+                                xValues: googleDelegate.mapEarningsXValuesForChart() ?? [],
+                                yValues: googleDelegate.mapEarningsYValuesForChart() ?? [])
+                                .frame(minHeight: 320)
                             HStack {
-                                Text("Range Total:").foregroundColor(.gray)
-                                Text(String(format: "%.2f", googleDelegate.getTotalEarningsOfMediationData() ?? 0)).bold()
-                            }
-                            Spacer()
+                                Spacer()
+                                Button(action: {
+                                    googleDelegate.mediationReport(
+                                        startDate: earningsStartDate,
+                                        endDate: earningsEndDate,
+                                        completed: { report in
+                                            DispatchQueue.main.async {
+                                                googleDelegate.mediationData = report
+                                            }
+                                        }
+                                    )
+                                }) {
+                                    Text("Get Report")
+                                }.buttonStyle(BlueButtonStyle())
+                                Spacer()
+                            }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
                         }
-                        HStack {
-                            Spacer()
-                            Button(action: {
-                                googleDelegate.mediationReport(
-                                    startDate: startDate,
-                                    endDate: endDate
-                                )
-                            }) {
-                                Text("Get Report")
-                            }.buttonStyle(BlueButtonStyle())
-                            Spacer()
-                        }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                        VStack {
+                            VStack {
+                                VStack {
+                                    HStack {
+                                        Spacer()
+                                        Text("Clicks").font(.title2)
+                                        Spacer()
+                                    }.padding(EdgeInsets(top: 2, leading: 0, bottom: 2, trailing: 0))
+                                    VStack {
+                                        HStack {
+                                            Text("Range Total:").foregroundColor(.gray)
+                                            Text(String(format: "%.2f", googleDelegate.getTotalClicksOfMediationData() ?? 0)).bold()
+                                        }
+                                    }
+                                }
+                                Divider()
+                                HStack {
+                                    Spacer()
+                                    VStack {
+                                        Text("Start Date").font(.title3)
+                                        DatePicker("Start Date",
+                                                   selection: $clicksStartDate,
+                                                   in: (clicksEndDate - TimeInterval(weekInSeconds * 6))...clicksEndDate,
+                                                   displayedComponents: .date).labelsHidden()
+                                    }
+                                    Spacer()
+                                    VStack {
+                                        Text("End Date").font(.title3)
+                                        DatePicker("End Date",
+                                                   selection: $clicksEndDate,
+                                                   in: clicksStartDate...Date(),
+                                                   displayedComponents: .date).labelsHidden()
+                                    }
+                                    Spacer()
+                                }
+                            }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.black.opacity(0.3), lineWidth: 2)
+                            )
+                            BarChart(
+                                xValues: googleDelegate.mapClicksXValuesForChart() ?? [],
+                                yValues: googleDelegate.mapClicksYValuesForChart() ?? [])
+                                .frame(minHeight: 320)
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    googleDelegate.mediationReport(
+                                        startDate: clicksStartDate,
+                                        endDate: clicksEndDate,
+                                        metric: Metric.CLICKS,
+                                        completed: { report in
+                                            DispatchQueue.main.async {
+                                                googleDelegate.clicksMediationData = report
+                                            }
+                                        }
+                                    )
+                                }) {
+                                    Text("Get Report")
+                                }.buttonStyle(BlueButtonStyle())
+                                Spacer()
+                            }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                        }
                     }.listStyle(PlainListStyle()).pullToRefresh(isShowing: $isShowing) {
-                        startDate = Date() - TimeInterval(weekInSeconds)
-                        endDate = Date()
-                        self.googleDelegate.fetchCurrentWeekMediationReport(completed: {_ in self.isShowing = false})
+                        //Reset all the dates
+                        earningsStartDate = Date() - TimeInterval(weekInSeconds)
+                        earningsEndDate = Date()
+                        clicksStartDate = Date() - TimeInterval(weekInSeconds)
+                        clicksEndDate = Date()
+                        self.googleDelegate.fetchInitialMediationReport(completed: {_ in self.isShowing = false})
                     }
                 }
             }

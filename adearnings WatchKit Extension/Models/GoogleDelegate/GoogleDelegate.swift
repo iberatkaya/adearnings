@@ -1,7 +1,7 @@
 import SwiftUI
 
 class GoogleDelegate: ObservableObject {
-    
+
     init() {
         if let admobData = UserDefaults.standard.object(forKey:  "admobAccount") {
             if let mydata = try? JSONDecoder().decode(AdmobAccount.self, from: admobData as! Data) {
@@ -14,15 +14,23 @@ class GoogleDelegate: ObservableObject {
         if let refreshTokenData = UserDefaults.standard.string(forKey:  "refreshToken") {
             self.refreshToken = refreshTokenData
         }
-        fetchCurrentWeekMediationReport()
+        fetchInitialMediationReport()
+        self.mediationReport(startDate: Date() - TimeInterval(weekInSeconds), endDate: Date(), metric: Metric.CLICKS, completed: { report in
+            DispatchQueue.main.async {
+                self.clicksMediationData = report
+                
+            }
+        })
     }
     
+    ///The OAuth 2.0 Token to make requests.
     @Published var oAuthToken: String? {
         didSet {
             UserDefaults.standard.set(oAuthToken, forKey: "oAuthToken")
         }
     }
     
+    ///The OAuth Refresh Token in order to refresh the OAuth Token.
     @Published var refreshToken: String? {
         didSet {
             UserDefaults.standard.set(refreshToken, forKey: "refreshToken")
@@ -47,6 +55,9 @@ class GoogleDelegate: ObservableObject {
     ///The Mediation Data requested by the user.
     @Published var mediationData: AdmobMediation?
     
+    ///The Mediation Report based on clicks
+    @Published var clicksMediationData: AdmobMediation?
+    
     func mediationReport(startDate: Date, endDate: Date, dimension: Dimension = Dimension.DATE, sort: Sort = Sort.DESCENDING, metric: Metric = Metric.ESTIMATED_EARNINGS, completed: @escaping (AdmobMediation?) -> Void = { _ in }){
         guard let admobAccount = admobAccount,
               let token = self.oAuthToken
@@ -55,7 +66,7 @@ class GoogleDelegate: ObservableObject {
             return
         }
         
-        mediationData?.rows = []
+        //mediationData?.rows = []
         
         let url = URL(string: "https://admob.googleapis.com/v1/\(admobAccount.name)/mediationReport:generate")!
         
@@ -86,7 +97,7 @@ class GoogleDelegate: ObservableObject {
                     if let errorCode = error["code"] as? Int {
                         if(errorCode == 401){
                             self.refreshOAuthToken(completed: {
-                                self.fetchCurrentWeekMediationReport(completed: {report in completed(report)})
+                                self.fetchInitialMediationReport(completed: {report in completed(report)})
                             })
                         }
                     }
@@ -94,15 +105,15 @@ class GoogleDelegate: ObservableObject {
                     return
                 }
                 
-                var admobMediation: AdmobMediation? = AdmobMediation.fromDicts(jsons: dictData)
-                DispatchQueue.main.async {
-                    self.mediationData?.rows = []
-                    if(dimension == Dimension.DATE){
-                        admobMediation?.rows.reverse()
-                    }
-                    self.mediationData = admobMediation
-                    completed(admobMediation)
-                }
+                var admobMediation: AdmobMediation? = AdmobMediation.fromDicts(jsons: dictData, metric: metric)
+                admobMediation?.rows.reverse()
+                completed(admobMediation)
+                //DispatchQueue.main.async {
+                //    self.mediationData?.rows = []
+                //    if(dimension == Dimension.DATE){
+                //    }
+                //    self.mediationData = admobMediation
+                //}
             } catch {
                 print("JSONDecoder error:", error)
                 completed(nil)
@@ -149,13 +160,18 @@ class GoogleDelegate: ObservableObject {
         }.resume()
     }
     
-    func fetchCurrentWeekMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
+    
+    ///Fetch the mediation reports based on the current week.
+    func fetchInitialMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
         currentWeekMediationData?.rows = []
         mediationReport(
             startDate: Date() - TimeInterval(weekInSeconds),
             endDate: Date(),
             completed: {report in
-                self.currentWeekMediationData = report
+                DispatchQueue.main.async {
+                    self.mediationData = report
+                    self.currentWeekMediationData = report
+                }
                 completed(report)
             })
     }
@@ -195,5 +211,14 @@ class GoogleDelegate: ObservableObject {
     
     func getTotalEarningsOfMediationData() -> Double? {
         return mediationData?.rows.reduce(0, {$0 + $1.metricValue.value})
+    }
+
+    func mapClickMediationDataToChartData() -> [(String, Double)]? {
+        return clicksMediationData?.rows.map({ ($0.dimensionValue.displayLabel ?? String($0.dimensionValue.value.suffix(2) + " - " + (admobAccount?.currencyCode ?? "")), $0.metricValue.value)
+        })
+    }
+    
+    func getTotalOfClicksMediationData() -> Double? {
+        return clicksMediationData?.rows.reduce(0, {$0 + $1.metricValue.value})
     }
 }
