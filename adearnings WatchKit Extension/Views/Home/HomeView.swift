@@ -151,12 +151,13 @@ struct HomeView: View {
                     HStack {
                         Button(action: {
                             currentIndex -= 1
-                            earningsStartDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
-                            earningsEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
+                            clicksStartDate = Date() - TimeInterval(weekInSeconds) * Double((-currentIndex + 1))
+                            clicksEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
                             googleDelegate.clicksMediationData?.rows = []
                             googleDelegate.mediationReport(
-                                startDate: earningsStartDate,
-                                endDate: earningsEndDate,
+                                startDate: clicksStartDate,
+                                endDate: clicksEndDate,
+                                metric: Metric.CLICKS,
                                 completed: { report in
                                     DispatchQueue.main.async {
                                         googleDelegate.clicksMediationData = report
@@ -183,8 +184,8 @@ struct HomeView: View {
                             clicksEndDate = Date()  - TimeInterval(weekInSeconds) * Double(-currentIndex)
                             googleDelegate.clicksMediationData?.rows = []
                             googleDelegate.mediationReport(
-                                startDate: earningsStartDate,
-                                endDate: earningsEndDate,
+                                startDate: clicksStartDate,
+                                endDate: clicksEndDate,
                                 metric: Metric.CLICKS,
                                 completed: { report in
                                     DispatchQueue.main.async {
