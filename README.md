@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to Ad Earnings 👋</h1>
 
-> Ad Earnings is an iOS and WatchOS app made with SwiftUI. It displays the an AdMob user's earnings. It is currently under development.
+> Ad Earnings is an iOS and watchOS app made with SwiftUI. It displays an AdMob user's analytics such as their estimated earnings or clicks in a given date range. Developed using WatchConnectivity to communicate between the WatchOS App and the iOS App. Available at the [App Store](https://apps.apple.com/us/app/ad-earnings/id1544731062).
 
 <p align="center">
     <img alt="Example Video" src="https://raw.githubusercontent.com/iberatkaya/adearnings/master/screenshots/1.gif" width="270" height="480">
