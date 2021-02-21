@@ -22,37 +22,63 @@ struct HomeView: View {
     ///The boolean that will be used in pull to refresh.
     @State var isShowing = false
     
+    ///The boolean that will display a loading indicator on app launch.
+    @State var hasPreviosSession = false
+    
     ///On mount, attempt to make a silent sign in.
     func onMount(){
-        googleDelegate.silentSignIn()
+        googleDelegate.silentSignIn(completed: { hasSession in
+            hasPreviosSession = hasSession
+            print("hasPreviosSession completed: \(hasPreviosSession)")
+        })
     }
     
     var body: some View {
         NavigationView {
             VStack {
-                if(!googleDelegate.signedIn){
-                    VStack {
-                        Text("Welcome To AdEarnings!").font(.title2).padding(EdgeInsets(top: 12, leading: 0, bottom: 8, trailing: 0))
-                        Text("Google Sign In to view your AdMob Earnings").padding(EdgeInsets(top: 0, leading: 0, bottom: 16, trailing: 0)).foregroundColor(Color.gray)
-                        GoogleSignIn().padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
+                if(hasPreviosSession && !googleDelegate.signedIn){
+                    ScrollView {
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: .gray))
+                            .scaleEffect(2)
+                        Text("Loading...")
+                            .foregroundColor(.gray)
+                            .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
+                    }
+                }
+                else if(!hasPreviosSession && !googleDelegate.signedIn){
+                    ScrollView {
+                        Text("Welcome To Ad Earnings!")
+                            .font(.system(size: 24))
+                            .bold()
+                            .padding(EdgeInsets(top: 12, leading: 0, bottom: 0, trailing: 0))
+                        Text("Google Sign In to view your AdMob Earnings!")
+                            .font(.system(size: 17))
+                            .padding(EdgeInsets(top: 12, leading: 0, bottom: 12, trailing: 0))
+                            .foregroundColor(Color.gray)
+                        GoogleSignIn()
                             .onTapGesture {
                                 googleDelegate.attemptLoginGoogle()
                             }
-                    }
+                            .frame(height: 60)
+                        Text("Open your Ad Earnings Watch App while signing in to use Ad Earnings on your Apple Watch.")
+                            .font(.system(size: 16))
+                            .padding(EdgeInsets(top: 12, leading: 0, bottom: 4, trailing: 0))
+                            .foregroundColor(Color.gray)
+                        Image("watch_ss")
+                            .cornerRadius(12)
+                            .scaleEffect(0.9)
+                    }.padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
+                    Spacer()
                 }
                 else {
                     List {
                         if(googleDelegate.admobAccount == nil && googleDelegate.madeFirstFetch){
-                            Text("Check if you have an AdMob Account!").font(.title3).foregroundColor(.red).bold()
+                            Text("Check if you have an AdMob Account!")
+                                .font(.title3)
+                                .foregroundColor(.red)
+                                .bold()
                         }
-                        HStack {
-                            Spacer()
-                            VStack {
-                                Text("Publisher")
-                                Text(googleDelegate.admobAccount?.publisherId ?? "").bold()
-                            }
-                            Spacer()
-                        }.padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
                         HStack {
                             Spacer()
                             VStack {
@@ -110,9 +136,9 @@ struct HomeView: View {
                                     }
                                     Spacer()
                                 }
-                            }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0)).overlay(
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.black.opacity(0.3), lineWidth: 2)
+                            }.padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                                .overlay(RoundedRectangle(cornerRadius: 20)
+                                .stroke(Color.black.opacity(0.3), lineWidth: 2)
                             )
                             BarChart(
                                 xValues: googleDelegate.mapEarningsXValuesForChart() ?? [],
@@ -199,6 +225,26 @@ struct HomeView: View {
                                 Spacer()
                             }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
                         }
+                        VStack {
+                            HStack {
+                                Spacer()
+                                VStack {
+                                    Text("Publisher")
+                                    Text(googleDelegate.admobAccount?.publisherId ?? "").bold()
+                                }
+                                Spacer()
+                            }.padding(EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0))
+                            HStack {
+                                Spacer()
+                                Button(action: {
+                                    googleDelegate.signOut()
+                                    hasPreviosSession = false
+                                }) {
+                                    Text("Sign Out")
+                                }.buttonStyle(BlueButtonStyle())
+                                Spacer()
+                            }.padding(EdgeInsets(top: 4, leading: 0, bottom: 4, trailing: 0))
+                        }
                     }.listStyle(PlainListStyle()).pullToRefresh(isShowing: $isShowing) {
                         //Reset all the dates
                         earningsStartDate = Date() - TimeInterval(weekInSeconds)
@@ -216,21 +262,17 @@ struct HomeView: View {
                 .frame(width: 240, height: 40)
                 .background(Color(red: 1, green: 0.55, blue: 0.55))
                 .cornerRadius(12)
-            }.padding(EdgeInsets(top: 16, leading: 0, bottom: 2, trailing: 0))
-            .navigationBarTitle("AdEarnings", displayMode: .inline)
+            }.navigationBarTitle("Ad Earnings", displayMode: .inline)
             .navigationBarItems(
                 trailing:
                     HStack {
                         if(googleDelegate.signedIn){
-                            Button(action: {
-                                googleDelegate.signOut()
-                            }) {
-                                Text("Sign Out")
-                            }
                         }
                     }
             )
-        }.onAppear(perform: onMount)
+        }
+        .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear(perform: onMount)
     }
 }
 

@@ -37,9 +37,6 @@ class GoogleDelegate: ObservableObject {
         }
     }
     
-    ///Check if the Google User is signed in.
-    @Published var signedIn: Bool = false
-    
     ///The AdMob Account
     @Published var admobAccount: AdmobAccount? {
         didSet {
@@ -47,6 +44,15 @@ class GoogleDelegate: ObservableObject {
                 UserDefaults.standard.set(encoded, forKey: "admobAccount")
             }
         }
+    }
+    
+    func logout(){
+        oAuthToken = nil
+        refreshToken = nil
+        admobAccount = nil
+        UserDefaults.standard.removeObject(forKey:  "oAuthToken")
+        UserDefaults.standard.removeObject(forKey:  "refreshToken")
+        UserDefaults.standard.removeObject(forKey:  "admobAccount")
     }
     
     ///The current week's Mediation Data in order to display in the UI.

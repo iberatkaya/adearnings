@@ -27,17 +27,28 @@ struct HomeView: View {
     }()
     
     var body: some View {
-        if(googleDelegate.signedIn){
-            VStack {
-                Text("Welcome To AdEarnings!").font(.title3).bold().padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
-                Text("Google Sign In on your iPhone to view your AdMob Earnings").foregroundColor(Color.gray)
-            }
+        if(googleDelegate.refreshToken == nil){
+            ScrollView {
+                Text("Welcome To")
+                    .font(.system(size: 16))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                Text("Ad Earnings!")
+                    .font(.system(size: 18))
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+                Text("Google Sign In on your iPhone while the Ad Earnings Watch App is open to view your AdMob Earnings.")
+                    .font(.system(size: 12))
+                    .foregroundColor(.gray)
+                    .fixedSize(horizontal: false, vertical: true)
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: .gray))
+                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
+            }.padding(EdgeInsets(top: 0, leading: 12, bottom: 0, trailing: 12))
         }
         else {
             ScrollView {
-                if(googleDelegate.oAuthToken == nil){
-                    Text("Please Google Sign In!")
-                }
                 VStack {
                     VStack {
                         Text("Today").font(.footnote).bold()
@@ -52,6 +63,7 @@ struct HomeView: View {
                         Text(String(format: "%.2f", googleDelegate.getCurrentWeekEarningsTotal() ?? 0) + " " + (googleDelegate.admobAccount?.currencyCode ?? "")).bold()
                     }
                 }.padding(EdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0))
+                
                 HStack {
                     Spacer()
                     Button(action: {
@@ -60,6 +72,7 @@ struct HomeView: View {
                         earningsEndDate = Date()
                         clicksStartDate = Date() - TimeInterval(weekInSeconds)
                         clicksEndDate = Date()
+                        
                         //Reset the current index.
                         currentIndex = 0
                         self.googleDelegate.fetchInitialMediationReport(completed: {_ in self.isShowing = false})
@@ -221,6 +234,18 @@ struct HomeView: View {
                         Spacer()
                     }
                 }
+                
+                Divider().padding(EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0))
+                
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        googleDelegate.logout()
+                    }) {
+                        Text("Logout")
+                    }
+                    Spacer()
+                }.padding(EdgeInsets(top: 4, leading: 0, bottom: 8, trailing: 0))
             }
         }
     }

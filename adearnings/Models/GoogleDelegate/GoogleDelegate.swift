@@ -84,7 +84,10 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         }
     }
     
-    ///Fetch the mediation reports based on the current week.
+    /**
+     * Fetch the mediation reports based on the current week.
+     * - Parameter completed: A closure that is called when the fetching is completed.
+     */
     func fetchInitialMediationReport(completed: @escaping (AdmobMediation?) -> Void = {_ in }) {
         currentWeekMediationData?.rows = []
         mediationReport(
@@ -115,13 +118,24 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
         madeFirstFetch = false
     }
     
-    ///Attempt a silent sign in.
-    func silentSignIn(){
+    /**
+     * Attempt a silent sign in.
+     * - Parameter completed: A closure that is called when the silent sign in attemps is completed with the success bool.
+     */
+    func silentSignIn(completed: @escaping (Bool) -> Void){
+        print("silent sign in completed")
         if (GIDSignIn.sharedInstance() != nil) {
             if(GIDSignIn.sharedInstance().hasPreviousSignIn()){
                 //User was previously authenticated to Google. Attempt to sign in.
                 GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+                completed(true)
             }
+            else {
+                completed(false)
+            }
+        }
+        else {
+            completed(false)
         }
     }
     
@@ -130,6 +144,8 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
      * According to https://developers.google.com/admob/api/v1/reference/rest/v1/accounts/list,
      * all credentials have access to at most one AdMob account. Therefore only the first account from the
      * array is returned.
+     *
+     * - Parameter completed: A closure that is called when the account request is completed with the success bool.
      */
     func accountsRequest(completed: @escaping (Bool) -> Void) {
         let url = URL(string: "https://admob.googleapis.com/v1/accounts")!
@@ -195,7 +211,7 @@ class GoogleDelegate: NSObject, GIDSignInDelegate, ObservableObject {
             }
             do {
                 let parsedData = try JSONSerialization.jsonObject(with: data) as? [[String: Any]]
-                print(parsedData)
+
                 guard let dictData = parsedData else {
                     completed(nil)
                     return
