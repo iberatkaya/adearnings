@@ -41,6 +41,7 @@ struct HomeView: View {
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .gray))
                             .scaleEffect(2)
+                            .padding(EdgeInsets(top: 24, leading: 0, bottom: 0, trailing: 0))
                         Text("Loading...")
                             .foregroundColor(.gray)
                             .padding(EdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0))
